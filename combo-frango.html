@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+  <!-- ✅ Codificação e Responsividade Aprimorada -->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Combo Frango Empanado – Marc’s Burguer</title>
-  <meta name="description" content="Combo Frango Empanado com peito crocante, maionese verde, alface, batatas fritas e refri. Peça já pelo iFood!" />
-  <meta name="keywords" content="frango empanado, lanche de frango, combo frango, marc’s burguer, cotia, ifood" />
+  <!-- 🎯 SEO Estratégico Marc’s Burguer -->
+  <title>Combo Frango Empanado Crocante – Marc’s Burguer</title>
+  <meta name="description" content="Combo Frango Empanado com peito de frango crocante, maionese verde artesanal, alface fresca, fritas douradas e refrigerante gelado. Peça agora pelo iFood em Cotia/SP!" />
+  <meta name="keywords" content="combo frango empanado, peito crocante, maionese verde, lanche artesanal, delivery Cotia, Marc’s Burguer, iFood" />
   <meta name="author" content="Marc’s Burguer" />
   <meta name="robots" content="index, follow" />
 
+  <!-- 🌐 Open Graph – Compartilhamento Social Otimizado -->
+  <meta property="og:title" content="Combo Frango Empanado Crocante – Marc’s Burguer" />
+  <meta property="og:description" content="Peito de frango empanado crocante, maionese verde artesanal, alface fresca, fritas douradas e refri. Peça via iFood em Cotia/SP." />
+  <meta property="og:image" content="assets/images/combo-frango-1.jpg" />
+  <meta property="og:url" content="https://mburguer.com.br/combo-frango.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- 🖼️ Identidade visual e estrutura do app -->
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#1E1E1E" />
+  <meta name="color-scheme" content="dark light" />
 
-  <!-- CSS -->
+  <!-- 🎨 Estilos Modulares Marc’s Burguer -->
   <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
   <link rel="stylesheet" href="assets/css/produto.css" />
   <link rel="stylesheet" href="assets/css/carrossel.css" />
   <link rel="stylesheet" href="assets/css/responsivo.css" />
@@ -24,70 +37,93 @@
 </head>
 
 <body>
-  <div data-include="partials/header.html"></div>
+  <!-- ⬆️ Cabeçalho institucional Marc’s Burguer -->
+  <div data-include="partials/header-produto.html"></div>
 
-  <!-- Botão flutuante do fullscreen -->
- <button id="fecharFullscreen"
-        class="btn-fechar-fullscreen"
-        aria-label="Fechar visualização em tela cheia">✕</button>
+  <!-- 🍗 Conteúdo principal -->
+  <main class="conteudo-produto" role="main" aria-labelledby="titulo-frango-empanado">
+    
+    <!-- 🌟 Destaque do Produto -->
+    <section aria-labelledby="titulo-frango-empanado">
+      <h2 id="titulo-frango-empanado" class="titulo-produto">Combo Frango Empanado Crocante</h2>
+      <p>
+        Peito empanado crocante, maionese verde artesanal, alface fresca e acompanhamentos irresistíveis.
+      </p>
+    </section>
 
-  <main class="conteudo-produto">
-    <section class="produto-destaque">
-      <h2 class="titulo-produto">Combo Frango Empanado Crocante</h2>
-      <p class="subtitulo-produto">
-        Peito empanado crocante, maionese verde artesanal e acompanhamentos irresistíveis.
+    <!-- 🎠 Carrossel com integração total -->
+    <section aria-labelledby="galeria-combo-frango">
+      <h3 id="galeria-combo-frango" class="secao-titulo">Galeria do Combo</h3>
+      <div class="carrossel-container"
+           aria-label="Galeria de imagens do Combo Frango Empanado"
+           onclick="abrirCarrosselFullscreen(this)">
+        <div class="carrossel transicao" id="carrossel-frango-empanado">
+          <img src="assets/images/combo-frango-1.jpg"
+               alt="Combo Frango Empanado completo com fritas douradas e refrigerante gelado"
+               loading="lazy" />
+          <img src="assets/images/combo-frango-2.jpg"
+               alt="Detalhe do peito de frango empanado crocante com maionese verde artesanal"
+               loading="lazy" />
+          <img src="assets/images/combo-frango-3.jpg"
+               alt="Vista superior do Combo Frango Empanado mostrando ingredientes selecionados"
+               loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔘 Botão fechar modo fullscreen -->
+    <button id="fecharFullscreen"
+            class="btn-fechar-fullscreen"
+            onclick="fecharCarrosselFullscreen()"
+            hidden aria-hidden="true"
+            aria-label="Fechar visualização em tela cheia">✕</button>
+
+    <!-- 📖 Seção Descrição Completa do Combo -->
+    <section class="descricao-produto" aria-labelledby="sobre-frango-empanado">
+      
+      <h3 id="sobre-frango-empanado">Sobre o Combo</h3>
+      <p>
+        O <strong>Combo Frango Empanado Crocante</strong> apresenta um delicioso peito de frango cuidadosamente empanado e frito até atingir uma crocância irresistível, acompanhado por nossa exclusiva maionese verde artesanal, alface americana fresca, batatas fritas crocantes e um refrigerante gelado. Uma combinação perfeita de leveza, sabor e textura.
       </p>
 
-      <section>
-        <h3 class="secao-titulo">Veja o Combo em Detalhes</h3>
-        <div class="carrossel-container">
-          <div class="carrossel transicao">
-            <img src="assets/images/combo-frango-1.jpg" alt="Combo Frango Empanado completo" loading="lazy" />
-            <img src="assets/images/combo-frango-2.jpg" alt="Close no peito de frango empanado com maionese verde" loading="lazy" />
-            <img src="assets/images/combo-frango-3.jpg" alt="Combo Frango Empanado acompanhado de fritas e refri" loading="lazy" />
-          </div>
-        </div>
-      </section>
+      <h3>Ingredientes Selecionados</h3>
+      <ul class="lista-ingredientes">
+        <li>🍗 Peito de frango empanado artesanalmente com crocância especial</li>
+        <li>🥬 Alface americana fresca selecionada</li>
+        <li>🧄 Maionese verde artesanal exclusiva Marc’s Burguer</li>
+        <li>🍟 Batata frita dourada, sequinha e crocante</li>
+        <li>🥤 Refrigerante gelado (várias opções disponíveis)</li>
+      </ul>
 
-      <section class="descricao-produto">
-        <h3>Sobre o Combo</h3>
-        <p>
-          O <strong>Combo Frango Empanado</strong> traz o melhor do peito de frango, com empanamento super crocante, alface americana fresca e nossa exclusiva maionese verde artesanal. Acompanha batatas fritas e refrigerante gelado.
-        </p>
+      <h3>Ocasiões Recomendadas</h3>
+      <p>
+        Ideal para refeições rápidas, encontros descontraídos, almoço leve e saudável ou jantares saborosos que combinam praticidade e qualidade artesanal.
+      </p>
 
-        <h3>Ingredientes principais</h3>
-        <ul class="lista-ingredientes">
-          <li>🍗 Peito de frango empanado crocante</li>
-          <li>🥬 Alface americana fresca</li>
-          <li>🧄 Maionese verde artesanal</li>
-          <li>🍟 Batata frita dourada</li>
-          <li>🥤 Refrigerante gelado</li>
-        </ul>
-
-        <h3>Ideal para</h3>
-        <p>
-          Quem aprecia um lanche leve e saboroso, com ingredientes selecionados e um toque artesanal único.
-        </p>
-
-        <div class="chamada-final">
-          <h3>Bateu a fome?</h3>
-          <p>Faça seu pedido agora pelo nosso parceiro oficial:</p>
-          <a href="https://www.ifood.com.br/delivery/marcs-burguer"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="botao-acao">
-            🍔 Pedir no iFood
-          </a>
-        </div>
-      </section>
+      <!-- 📲 CTA Especializado via iFood -->
+      <div class="chamada-final">
+        <h3>Bateu a fome?</h3>
+        <p>Peça agora mesmo o seu Combo Frango Empanado com entrega rápida e prática pelo nosso parceiro oficial:</p>
+        <a href="https://www.ifood.com.br/delivery/marcs-burguer?produto=frango-empanado"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="botao-acao"
+           aria-label="Pedir Combo Frango Empanado via iFood">
+          🍗 Pedir Combo Frango no iFood
+        </a>
+      </div>
     </section>
+
   </main>
 
+  <!-- 🧭 Rodapé Institucional Marc’s Burguer -->
   <div data-include="partials/footer.html"></div>
 
-  <!-- JS -->
+  <!-- 🧠 Scripts Essenciais Marc’s Burguer -->
+  <script src="scripts/router-auto.js" defer></script>
+  <script src="scripts/menu-lateral.js" defer></script>
   <script src="scripts/carrossel.js" defer></script>
-  <script src="scripts/includes.js" defer></script>
   <script src="scripts/footer-loader.js" defer></script>
+
 </body>
 </html>

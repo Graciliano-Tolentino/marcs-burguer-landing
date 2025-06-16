@@ -1,35 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+  <!-- 🌐 Codificação, Compatibilidade e Responsividade Otimizada -->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Marc’s Burguer – Sabor que supera</title>
-  <meta name="description" content="Os melhores combos de hambúrguer artesanal de Cotia/SP. Picanha, Frango Crocante e X-Tudo Explosivo. Peça agora no iFood!" />
-  <meta name="keywords" content="hamburguer, lanche, cotia, picanha, xtudo, frango crocante, marc’s burguer, ifood" />
+  <!-- 🚀 SEO Estratégico Marc’s Burguer -->
+  <title>Marc’s Burguer – Combos Artesanais Irresistíveis em Cotia/SP</title>
+  <meta name="description" content="Descubra os melhores hambúrgueres artesanais: Picanha Premium, Frango Crocante e X-Tudo Explosivo. Peça agora no iFood com entrega rápida em Cotia/SP!" />
+  <meta name="keywords" content="hambúrguer artesanal, combo premium, delivery Cotia, lanche gourmet, Marc's Burguer, iFood, comida rápida" />
   <meta name="author" content="Marc’s Burguer" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://mburguer.com.br" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Marc’s Burguer – Sabor que supera" />
-  <meta property="og:description" content="Combo Picanha, Frango Empanado e X-Tudo direto da cozinha central em Cotia/SP." />
-  <meta property="og:image" content="assets/images/social-preview.jpg" />
+  <!-- 📲 Otimização Social Avançada (Open Graph e Twitter Cards) -->
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:title" content="Marc’s Burguer – Combos Artesanais em Cotia/SP" />
+  <meta property="og:description" content="Picanha Premium, Frango Crocante e X-Tudo Explosivo com entrega rápida via iFood." />
+  <meta property="og:image" content="https://mburguer.com.br/assets/images/social-preview.jpg" />
   <meta property="og:url" content="https://mburguer.com.br/" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Marc’s Burguer – Sabor que supera" />
-  <meta name="twitter:description" content="Hambúrguer premium com entrega via iFood. Cotia/SP." />
-  <meta name="twitter:image" content="assets/images/social-preview.jpg" />
+  <meta name="twitter:title" content="Marc’s Burguer – Artesanal e Delicioso" />
+  <meta name="twitter:description" content="Melhores hambúrgueres artesanais em Cotia/SP. Experimente hoje via iFood!" />
+  <meta name="twitter:image" content="https://mburguer.com.br/assets/images/social-preview.jpg" />
 
+  <!-- 🎨 Ícone, Tema e Manifest -->
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#1E1E1E" />
   <meta name="color-scheme" content="dark light" />
 
+  <!-- 📈 Dados Estruturados JSON-LD Aprimorados para Máxima Visibilidade SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Marc’s Burguer",
+    "image": "https://mburguer.com.br/assets/images/social-preview.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Principal, 123",
+      "addressLocality": "Cotia",
+      "addressRegion": "SP",
+      "postalCode": "06700-000",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.603899,
+      "longitude": -46.919765
+    },
+    "url": "https://mburguer.com.br",
+    "telephone": "+5511963372373",
+    "servesCuisine": "Hambúrguer Artesanal",
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.instagram.com/marcsburguer",
+      "https://www.facebook.com/marcsburguer",
+      "https://www.ifood.com.br/delivery/marcs-burguer"
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "11:00",
+        "closes": "23:00"
+      }
+    ],
+    "potentialAction": {
+      "@type": "OrderAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.ifood.com.br/delivery/marcs-burguer",
+        "inLanguage": "pt-BR",
+        "actionPlatform": ["https://schema.org/DesktopWebPlatform", "https://schema.org/MobileWebPlatform"]
+      },
+      "deliveryMethod": "https://schema.org/OnDemandDelivery"
+    }
+  }
+  </script>
+
+  <!-- 🧩 Estilos Modulares otimizados -->
   <link rel="stylesheet" href="assets/css/base.css" />
-  <link rel="stylesheet" href="assets/css/layout.css" />
   <link rel="stylesheet" href="assets/css/home.css" />
   <link rel="stylesheet" href="assets/css/carrossel.css" />
   <link rel="stylesheet" href="assets/css/responsivo.css" />
@@ -37,52 +92,65 @@
   <link rel="stylesheet" href="assets/css/footer.css" />
 </head>
 
-<body>
-  <div data-include="partials/header.html"></div>
 
+<body>
+  <!-- ⬆️ Cabeçalho Institucional Marc's Burguer -->
+  <header data-include="partials/header.html"></header>
+
+  <!-- 🔄 Conteúdo Principal -->
   <main>
-    <section class="produtos" aria-labelledby="titulo-combos">
-      <h2 id="titulo-combos" class="secao-titulo">Combos Irresistíveis</h2>
+
+    <!-- 🍔 Seção Combos Artesanais Marc's Burguer -->
+    <section class="combos-artesanais" aria-labelledby="titulo-combos">
+      <h2 id="titulo-combos" class="secao-titulo">Combos Artesanais Exclusivos</h2>
 
       <div class="cards-container">
-        <a href="combo-picanha.html" class="card" aria-label="Combo Picanha">
-          <img src="assets/images/combo-picanha.jpg" alt="Combo Picanha" loading="lazy" />
-          <h3>Combo Picanha</h3>
-          <p>Burguer 180g de picanha, queijo prato, molho da casa, fritas e refri.</p>
-        </a>
+        <article class="card">
+          <a href="combo-picanha.html" aria-label="Combo Picanha Premium">
+            <img src="assets/images/combo-picanha.jpg" alt="Combo Picanha Premium" loading="lazy" />
+            <h3>Combo Picanha Premium</h3>
+            <p>Burguer artesanal 180g, queijo prato derretido, molho especial, fritas crocantes e refrigerante.</p>
+          </a>
+        </article>
 
-        <a href="combo-frango.html" class="card" aria-label="Combo Frango Empanado">
-          <img src="assets/images/combo-frango.jpg" alt="Combo Frango Empanado" loading="lazy" />
-          <h3>Combo Frango Empanado</h3>
-          <p>Peito crocante, maionese verde artesanal, alface americana, fritas e refri.</p>
-        </a>
+        <article class="card">
+          <a href="combo-frango.html" aria-label="Combo Frango Crocante">
+            <img src="assets/images/combo-frango.jpg" alt="Combo Frango Crocante" loading="lazy" />
+            <h3>Combo Frango Crocante</h3>
+            <p>Peito de frango empanado, alface fresca, maionese verde especial, fritas douradas e refrigerante.</p>
+          </a>
+        </article>
 
-        <a href="combo-xtudo.html" class="card" aria-label="Combo X-Tudo">
-          <img src="assets/images/combo-xtudo.jpg" alt="Combo X-Tudo" loading="lazy" />
-          <h3>Combo X-Tudo</h3>
-          <p>Burguer 150g, ovo, bacon, cheddar, presunto, alface, tomate, fritas e refri.</p>
-        </a>
+        <article class="card">
+          <a href="combo-xtudo.html" aria-label="Combo X-Tudo Explosivo">
+            <img src="assets/images/combo-xtudo.jpg" alt="Combo X-Tudo Explosivo" loading="lazy" />
+            <h3>Combo X-Tudo Explosivo</h3>
+            <p>Burguer 150g, ovo, bacon crocante, cheddar derretido, presunto suave, alface, tomate, fritas e refrigerante.</p>
+          </a>
+        </article>
       </div>
     </section>
 
-    <section class="cta" aria-labelledby="titulo-cta">
-      <h2 id="titulo-cta" class="secao-titulo">Bateu a fome?</h2>
-      <p class="cta-texto">
-        Peça agora mesmo com entrega rápida via iFood direto da nossa cozinha em Cotia/SP:
-      </p>
+    <!-- 🚀 Call To Action – Pedido Direto -->
+    <section class="cta-pedido" aria-labelledby="titulo-cta">
+      <h2 id="titulo-cta" class="secao-titulo">A fome bateu?</h2>
+      <p class="cta-texto">Peça agora com entrega rápida e qualidade garantida via iFood, diretamente da nossa cozinha em Cotia/SP.</p>
 
-      <a class="whatsapp-btn"
+      <a class="ifood-btn"
          href="https://www.ifood.com.br/delivery/marcs-burguer"
          target="_blank"
          rel="noopener noreferrer"
-         aria-label="Peça agora pelo iFood">
-        🍔 Pedir no iFood
+         aria-label="Peça agora pelo iFood Marc’s Burguer">
+        🍔 Pedir pelo iFood
       </a>
     </section>
+    
   </main>
 
-  <div data-include="partials/footer.html"></div>
+  <!-- 🧭 Rodapé Institucional Marc's Burguer -->
+  <footer data-include="partials/footer.html"></footer>
 
+  <!-- 🧠 Scripts Essenciais Marc's Burguer -->
   <script src="scripts/includes.js" defer></script>
   <script src="scripts/menuLateral.js" defer></script>
   <script src="scripts/footer-loader.js" defer></script>
