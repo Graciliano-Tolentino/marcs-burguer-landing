@@ -1,9 +1,10 @@
+
 /* =============================================================================
-🎠 carrossel.css – Galeria Inteligente Marc's Burguer (v2.1)
-🍔 Swipe, Acessibilidade, Fullscreen Elegante e Modular
+🎠 carrossel.css — Galeria Inteligente Marc's Burguer (v4.0 refinado)
+🍔 Swipe, Acessibilidade, Fullscreen Imersivo, Centralização Perfeita e Estética Gourmet
 ============================================================================= */
 
-/* 🌐 Fullscreen refinado */
+/* 🌐 Fullscreen refinado e centralizado com foco em experiência premium */
 .carrossel.fullscreen {
   position: fixed;
   inset: 0;
@@ -12,7 +13,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding: 2rem clamp(1rem, 5vw, 3rem);
@@ -21,25 +21,28 @@
   opacity: 0;
   pointer-events: none;
 }
+
 .carrossel.fullscreen.ativo {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* 🖼️ Imagens no modo expandido */
+/* 🖼️ Imagens no modo fullscreen com centralização absoluta */
 .carrossel.fullscreen img {
   max-height: 85vh;
   max-width: 95vw;
-  border-radius: 12px;
   object-fit: contain;
+  margin: auto;
+  border-radius: 12px;
   box-shadow: var(--sombra-forte);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .carrossel.fullscreen img:hover {
   transform: scale(1.02);
 }
 
-/* 🧷 Fechar fullscreen – botão fixo flutuante */
+/* 🧷 Botão flutuante de fechar fullscreen com foco e acessibilidade aprimorada */
 #fecharFullscreen {
   position: fixed;
   top: 1.2rem;
@@ -56,20 +59,25 @@
   box-shadow: var(--sombra-media);
   transition: background-color 0.25s ease, transform 0.25s ease;
 }
+
 #fecharFullscreen:hover {
   background-color: var(--cor-secundaria);
   transform: scale(1.05);
 }
 
-/* =============================================================================
-🎛️ Slide ativo/inativo – Transição por classe com acessibilidade
-============================================================================= */
+#fecharFullscreen:focus-visible {
+  outline: 2px dashed var(--cor-secundaria);
+  outline-offset: 4px;
+}
+
+/* 🎛️ Slide ativo/inativo com transição suave e acessível */
 .carrossel img.ativo {
   opacity: 1;
   visibility: visible;
   position: relative;
   z-index: 1;
 }
+
 .carrossel img.inativo {
   opacity: 0;
   visibility: hidden;
@@ -79,32 +87,34 @@
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* ♿ Foco visual e acessível */
+/* ♿️ Foco visual e navegação por teclado (acessibilidade aprimorada) */
 .carrossel img:focus {
   outline: 2px solid var(--cor-secundaria);
   outline-offset: 4px;
 }
 
-/* ✨ Animações e responsividade padrão */
+/* ✨ Transições padrão refinadas */
 .transicao {
   transition: all 0.25s ease-in-out;
 }
 
-/* 📱 Ajustes mobile-first mantidos */
+/* 📱 Responsividade mobile: oculta controles em dispositivos por toque */
 @media (hover: none) and (pointer: coarse) {
   .carrossel-controle {
     display: none;
   }
 }
 
-/* 🔍 Scrollbar leve e personalizada */
+/* 🔍 Scrollbar leve e estilizada para UX aprimorada */
 .carrossel-container::-webkit-scrollbar {
   height: 6px;
 }
+
 .carrossel-container::-webkit-scrollbar-thumb {
   background: #555;
   border-radius: 3px;
 }
+
 .carrossel-container::-webkit-scrollbar-track {
   background: transparent;
 }
