@@ -1,10 +1,9 @@
-
 /* =============================================================================
-🎠 carrossel.css — Galeria Inteligente Marc's Burguer (v4.0 refinado)
-🍔 Swipe, Acessibilidade, Fullscreen Imersivo, Centralização Perfeita e Estética Gourmet
+🎠 carrossel.css — Galeria Inteligente Marc's Burguer (v4.1 Ultimate)
+🍔 Swipe, Acessibilidade Total, Fullscreen Premium, Centralização Absoluta
 ============================================================================= */
 
-/* 🌐 Fullscreen refinado e centralizado com foco em experiência premium */
+/* 🌐 Fullscreen elegante com experiência visual perfeita */
 .carrossel.fullscreen {
   position: fixed;
   inset: 0;
@@ -13,10 +12,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  overflow: hidden;
   padding: 2rem clamp(1rem, 5vw, 3rem);
-  gap: 2rem;
   transition: opacity 0.25s ease-in-out;
   opacity: 0;
   pointer-events: none;
@@ -27,7 +24,7 @@
   pointer-events: auto;
 }
 
-/* 🖼️ Imagens no modo fullscreen com centralização absoluta */
+/* 🖼️ Imagens em fullscreen com centralização e impacto visual máximo */
 .carrossel.fullscreen img {
   max-height: 85vh;
   max-width: 95vw;
@@ -42,7 +39,7 @@
   transform: scale(1.02);
 }
 
-/* 🧷 Botão flutuante de fechar fullscreen com foco e acessibilidade aprimorada */
+/* 🧷 Botão fechar fullscreen com acessibilidade e estilo superior */
 #fecharFullscreen {
   position: fixed;
   top: 1.2rem;
@@ -70,6 +67,11 @@
   outline-offset: 4px;
 }
 
+/* 🚫 Remover setinhas de controle permanentemente */
+.carrossel-controle {
+  display: none !important;
+}
+
 /* 🎛️ Slide ativo/inativo com transição suave e acessível */
 .carrossel img.ativo {
   opacity: 1;
@@ -87,7 +89,7 @@
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* ♿️ Foco visual e navegação por teclado (acessibilidade aprimorada) */
+/* ♿️ Acessibilidade visual para navegação por teclado */
 .carrossel img:focus {
   outline: 2px solid var(--cor-secundaria);
   outline-offset: 4px;
@@ -98,14 +100,14 @@
   transition: all 0.25s ease-in-out;
 }
 
-/* 📱 Responsividade mobile: oculta controles em dispositivos por toque */
+/* 📱 Responsividade aprimorada para mobile */
 @media (hover: none) and (pointer: coarse) {
   .carrossel-controle {
     display: none;
   }
 }
 
-/* 🔍 Scrollbar leve e estilizada para UX aprimorada */
+/* 🔍 Scrollbar estilizada para melhor UX */
 .carrossel-container::-webkit-scrollbar {
   height: 6px;
 }
