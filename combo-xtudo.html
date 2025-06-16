@@ -26,22 +26,33 @@
 
 <body>
   <div data-include="partials/header.html"></div>
-  <button id="fecharFullscreen" class="btn-fechar-fullscreen" hidden aria-hidden="true" aria-label="Fechar visualização em tela cheia">✕</button>
+
+  <!-- Botão flutuante do fullscreen -->
+  <button id="fecharFullscreen"
+          class="btn-fechar-fullscreen"
+          hidden
+          aria-hidden="true"
+          aria-label="Fechar visualização em tela cheia">✕</button>
 
   <main class="conteudo-produto">
     <section>
       <h2 class="titulo-produto">Combo X-Tudo Explosão de Sabor</h2>
       <p>Hambúrguer artesanal completo para quem ama sabores intensos.</p>
-
     </section>
 
     <section>
       <h3 class="secao-titulo">Veja o Combo em Detalhes</h3>
       <div class="carrossel-container">
         <div class="carrossel transicao">
-          <img src="assets/images/combo-xtudo-1.jpg" alt="Combo X-Tudo completo com fritas e refrigerante" />
-          <img src="assets/images/combo-xtudo-2.jpg" alt="Detalhe do hambúrguer artesanal com cheddar derretido e bacon" />
-          <img src="assets/images/combo-xtudo-3.jpg" alt="Combo X-Tudo visto de cima com todos os ingredientes visíveis" />
+          <img src="assets/images/combo-xtudo-1.jpg"
+               alt="Combo X-Tudo completo com fritas e refrigerante"
+               loading="lazy" />
+          <img src="assets/images/combo-xtudo-2.jpg"
+               alt="Detalhe do hambúrguer artesanal com cheddar derretido e bacon"
+               loading="lazy" />
+          <img src="assets/images/combo-xtudo-3.jpg"
+               alt="Combo X-Tudo visto de cima com todos os ingredientes visíveis"
+               loading="lazy" />
         </div>
       </div>
     </section>

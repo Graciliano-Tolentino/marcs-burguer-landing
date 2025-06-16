@@ -1,9 +1,4 @@
-/* ================================================================================
-🍔 base.css – Núcleo Visual do Projeto Marc’s Burguer
-🎯 Reset, Tipografia, Tokens Visuais Globais, Acessibilidade
-================================================================================ */
-
-/* 🔄 RESET UNIVERSAL */
+/* 🔄 RESET UNIVERSAL & 🌐 HTML BASE */
 *,
 *::before,
 *::after {
@@ -12,7 +7,6 @@
   box-sizing: border-box;
 }
 
-/* 🌐 HTML BASE */
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -21,7 +15,7 @@ html {
   font-size: 100%;
 }
 
-/* 🍔 Corpo do site */
+/* 🍔 Corpo e Estrutura Base do Site */
 body {
   font-family: 'Inter', Roboto, 'Helvetica Neue', sans-serif;
   font-size: 1rem;
@@ -29,24 +23,23 @@ body {
   color: var(--cor-texto);
   min-height: 100vh;
   overflow-x: hidden;
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  unicode-bidi: isolate;
+  word-break: break-word;
 }
 
-/* ================================================================================
-🎨 TOKENS VISUAIS – VARIÁVEIS CSS GLOBAIS
-================================================================================ */
-
+/* 🎨 TOKENS VISUAIS – VARIÁVEIS CSS GLOBAIS */
 :root {
-  /* 🍔 Cores institucionais Marc’s Burguer */
-  --cor-principal: #B22222; /* vermelho gourmet */
-  --cor-secundaria: #FFD700; /* dourado */
-  --cor-destaque: #E60000; /* vermelho vibrante (hover) */
+  --cor-principal: #B22222;
+  --cor-secundaria: #FFD700;
+  --cor-destaque: #E60000;
 
   --cor-clara: #FFFFFF;
   --cor-media: #CCCCCC;
-  --cor-escura: #1E1E1E; /* grafite fundo */
+  --cor-escura: #151515;
 
   --cor-texto: #FFFFFF;
-  --cor-fundo: #1E1E1E; /* fundo principal escuro */
+  --cor-fundo: #151515;
 
   --cor-sucesso: #1da851;
   --cor-erro: #b91c1c;
@@ -56,12 +49,10 @@ body {
   --cor-borda: #333;
   --cor-placeholder: #777;
 
-  /* ✨ Sombras */
   --sombra-leve: 0 2px 8px rgba(0, 0, 0, 0.1);
   --sombra-media: 0 4px 16px rgba(0, 0, 0, 0.2);
   --sombra-forte: 0 8px 24px rgba(0, 0, 0, 0.3);
 
-  /* 📏 Espaçamentos base */
   --espaco-xs: 0.5rem;
   --espaco-sm: 1rem;
   --espaco-md: 1.5rem;
@@ -69,8 +60,8 @@ body {
   --espaco-xl: 3rem;
 }
 
-/* ================================================================================
-🔤 TIPOGRAFIA GLOBAL – Hierarquia Gourmet e Leitura Clara
+/* ================================================================================  
+🔤 TIPOGRAFIA GLOBAL – Hierarquia Gourmet e Leitura Clara  
 ================================================================================ */
 
 h1, h2, h3, h4, h5, h6 {
@@ -94,21 +85,29 @@ p {
   color: var(--cor-media);
 }
 
-/* ================================================================================
-🧩 ELEMENTOS GLOBAIS – Containers, Imagens, Inputs, Placeholder
+body, p, li {
+  line-height: 1.75;
+}
+
+/* ================================================================================  
+🧩 ELEMENTOS GLOBAIS – Containers, Imagens, Inputs, Placeholder  
 ================================================================================ */
 
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: var(--espaco-sm);
+  box-sizing: border-box;
 }
 
 img {
   max-width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
   border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 ::placeholder {
@@ -116,8 +115,17 @@ img {
   opacity: 1;
 }
 
-/* ================================================================================
-♿️ ACESSIBILIDADE & NAVEGAÇÃO POR TECLADO
+button, input, select, textarea {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* ================================================================================  
+♿️ ACESSIBILIDADE & NAVEGAÇÃO POR TECLADO  
 ================================================================================ */
 
 [hidden] {
@@ -131,25 +139,48 @@ select:focus,
 textarea:focus {
   outline: 2px dashed var(--cor-destaque);
   outline-offset: 4px;
-  transition: outline 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.03);
+  transition: outline 0.3s ease, background-color 0.3s ease;
 }
 
 html:focus-within {
   scroll-behavior: smooth;
 }
 
-/* ================================================================================
-📱 MOBILE FIRST – Ajustes tipográficos para telas menores
+body:fullscreen {
+  overflow: hidden;
+}
+
+:fullscreen,
+:-webkit-full-screen,
+:-moz-full-screen {
+  background-color: #000;
+  overflow: hidden;
+}
+
+/* ♿️ Reforço visual de foco em botões e interações acessíveis */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px dashed var(--cor-secundaria);
+  outline-offset: 4px;
+}
+
+/* ================================================================================  
+🔘 BOTÕES GLOBAIS – Integração com Fullscreen, Ação e Fechamento  
 ================================================================================ */
 
-@media (max-width: 768px) {
-  html {
-    font-size: 95%;
-  }
-
-  h1 { font-size: 1.9rem; }
-  h2 { font-size: 1.6rem; }
-  h3 { font-size: 1.3rem; }
+button {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-sizing: border-box;
 }
 
 /* 🎯 Botão padrão – ação (ex: pedido iFood) */
@@ -163,18 +194,27 @@ html:focus-within {
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: var(--sombra-leve);
 }
 
 .botao-acao:hover {
   background-color: var(--cor-destaque);
   box-shadow: var(--sombra-media);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .botao-acao {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
 }
 
 /* ================================================================================  
 🔠 SUPORTE A EMOJIS E GLIFOS COMUNICATIVOS  
 ================================================================================ */
+
 body, .lista-ingredientes li {
   font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-smoothing: antialiased;
@@ -190,30 +230,13 @@ body, .lista-ingredientes li {
   gap: 0.5rem;
 }
 
-/* 🧭 Suporte nativo a contêineres em tela cheia */
-:fullscreen,
-:-webkit-full-screen,
-:-moz-full-screen {
-  background-color: #000;
-  overflow: hidden;
-}
-
-/* 🔒 Segurança extra para fullscreen no body */
-body:fullscreen {
-  overflow: hidden;
-}
-
 /* ================================================================================  
-🔘 BOTÕES GLOBAIS – Integração com Fullscreen, Ação e Fechamento  
+🎞️ TRANSIÇÕES, ANIMAÇÕES E SUPORTE GLOBAL RESPONSIVO  
 ================================================================================ */
-button {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+
+/* 🎞️ Suporte global a animações e transições suaves */
+.transicao {
+  transition: all 0.25s ease-in-out !important;
 }
 
 /* 🖼️ Imagens em qualquer contexto (fullscreen, carrossel, responsivo) */
@@ -226,26 +249,13 @@ img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 🎞️ Suporte global a animações e transições suaves */
-.transicao {
-  transition: all 0.25s ease-in-out !important;
-}
-
-/* ♿️ Reforço visual de foco em botões e interações acessíveis */
-button:focus,
-a:focus,
-input:focus,
-textarea:focus,
-select:focus {
-  outline: 2px dashed var(--cor-secundaria);
-  outline-offset: 4px;
-  background-color: rgba(255, 255, 255, 0.03);
-}
-
-/* 📱 Ajustes responsivos leves em botões de ação */
-@media (max-width: 600px) {
-  .botao-acao {
-    font-size: 0.95rem;
-    padding: 0.6rem 1.2rem;
+/* 📱 MOBILE FIRST – Ajustes tipográficos para telas menores */
+@media (max-width: 768px) {
+  html {
+    font-size: 95%;
   }
+
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.3rem; }
 }
