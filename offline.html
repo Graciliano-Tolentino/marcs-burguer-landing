@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="theme-color" content="#1E1E1E" />
+
+  <title>🍔 Offline • Marc’s Burguer</title>
+  <meta name="description" content="Você está offline. Assim que sua conexão voltar, o sabor irresistível do Marc’s Burguer estará novamente disponível." />
+
+  <link rel="icon" href="assets/images/favicon.ico" />
+
+  <style>
+    :root {
+      --vermelho: #B22222;
+      --grafite: #1E1E1E;
+      --cinza-claro: #CCCCCC;
+      --branco: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--grafite);
+      color: var(--branco);
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header {
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    header img {
+      width: 96px;
+      height: auto;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 2px var(--vermelho));
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--vermelho);
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: var(--cinza-claro);
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.875rem;
+      color: var(--cinza-claro);
+    }
+  </style>
+</head>
+
+<body aria-live="polite" aria-label="Página offline do Marc’s Burguer">
+  <header role="banner">
+    <img src="assets/images/logo.svg" alt="Marc’s Burguer" />
+    <h1>🍔 Você está offline</h1>
+    <p>
+      Parece que você perdeu a conexão.<br />
+      Mas não se preocupe, assim que a internet voltar,<br />
+      nossos combos irresistíveis estarão à sua espera!
+    </p>
+  </header>
+
+  <footer role="contentinfo">
+    Marc’s Burguer – Sabor artesanal que <strong>supera expectativas</strong> em Cotia/SP.
+  </footer>
+</body>
+</html>

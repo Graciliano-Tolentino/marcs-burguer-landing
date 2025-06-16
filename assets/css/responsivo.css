@@ -1,0 +1,99 @@
+/* ============================================================================
+📱 responsivo.css – Responsividade Global Marc’s Burguer
+🍔 Ajustes otimizados para mobile, tablet e desktop
+============================================================================ */
+
+/* ============================================================================
+📱 Smartphones (até 480px)
+============================================================================ */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .secao-titulo {
+    font-size: 1.3rem;
+  }
+
+  .container {
+    padding: var(--espaco-md) var(--espaco-sm);
+  }
+
+  .card {
+    max-width: 100%;
+    margin-bottom: var(--espaco-md);
+  }
+
+  .carrossel img {
+    max-height: 240px;
+  }
+
+  .botao-acao {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.75rem 1.2rem;
+  }
+
+  .conteudo-produto,
+  .chamada-final {
+    padding: var(--espaco-md) var(--espaco-sm);
+  }
+}
+
+/* ============================================================================
+📲 Tablets (481px até 1024px)
+============================================================================ */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .carrossel img {
+    max-height: 360px;
+  }
+
+  .conteudo-produto {
+    padding: var(--espaco-lg) var(--espaco-md);
+  }
+
+  .chamada-final {
+    padding: var(--espaco-lg) var(--espaco-md);
+  }
+
+  .container {
+    padding: var(--espaco-lg) var(--espaco-md);
+  }
+}
+
+/* ============================================================================
+🖥️ Desktops (> 1280px)
+============================================================================ */
+@media (min-width: 1280px) {
+  body {
+    font-size: 1.05rem;
+  }
+
+  .container {
+    padding: var(--espaco-xl);
+  }
+
+  .conteudo-produto p,
+  .cta-texto {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  .carrossel img {
+    max-height: 520px;
+  }
+
+  .botao-acao {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
+}

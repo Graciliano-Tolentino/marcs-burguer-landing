@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Combo X-Tudo – Marc’s Burguer</title>
+  <meta name="description" content="Combo X-Tudo com hambúrguer artesanal, ovo, bacon, cheddar, presunto, fritas e refri. Peça agora no iFood!" />
+  <meta name="keywords" content="xtudo, hamburguer artesanal, bacon, cheddar, cotia, marcs burguer, ifood" />
+  <meta name="author" content="Marc’s Burguer" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1E1E1E" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/produto.css" />
+  <link rel="stylesheet" href="assets/css/carrossel.css" />
+  <link rel="stylesheet" href="assets/css/responsivo.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+</head>
+
+<body>
+  <div data-include="partials/header.html"></div>
+
+  <main class="conteudo-produto">
+    <section>
+      <h2 class="titulo-produto">Combo X-Tudo Explosão de Sabor</h2>
+      <p>Hambúrguer artesanal completo para quem ama sabores intensos.</p>
+    </section>
+
+    <section>
+      <h3 class="secao-titulo">Veja o Combo em Detalhes</h3>
+      <div class="carrossel-container">
+        <div class="carrossel transicao">
+          <img src="assets/images/combo-xtudo-1.jpg" alt="Combo X-Tudo completo com fritas e refrigerante" />
+          <img src="assets/images/combo-xtudo-2.jpg" alt="Detalhe do hambúrguer artesanal com cheddar derretido e bacon" />
+          <img src="assets/images/combo-xtudo-3.jpg" alt="Combo X-Tudo visto de cima com todos os ingredientes visíveis" />
+        </div>
+      </div>
+    </section>
+
+    <section class="descricao-produto">
+      <h3>Sobre o Combo</h3>
+      <p>
+        Nosso <strong>Combo X-Tudo</strong> inclui hambúrguer artesanal de 150g, queijo cheddar derretido, bacon crocante, ovo frito na chapa, presunto, alface, tomate frescos, acompanhado por batatas fritas crocantes e um refrigerante gelado.
+      </p>
+
+      <h3>Ingredientes principais</h3>
+      <ul class="lista-ingredientes">
+        <li>🍔 Hambúrguer artesanal 150g</li>
+        <li>🥓 Bacon crocante</li>
+        <li>🧀 Queijo cheddar cremoso</li>
+        <li>🍳 Ovo na chapa</li>
+        <li>🍅 Alface e tomate frescos</li>
+        <li>🍟 Batata frita</li>
+        <li>🥤 Refrigerante gelado</li>
+      </ul>
+
+      <h3>Ideal para</h3>
+      <p>
+        Quem procura um lanche completo, robusto e cheio de sabor. Experimente essa explosão em cada mordida!
+      </p>
+
+      <div class="chamada-final">
+        <h3>Bateu a fome?</h3>
+        <p>Peça agora pelo nosso parceiro oficial:</p>
+        <a href="https://www.ifood.com.br/delivery/marcs-burguer"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="botao-acao">
+          🍔 Pedir no iFood
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+  <!-- JS -->
+  <script src="scripts/carrossel.js" defer></script>
+  <script src="scripts/includes.js" defer></script>
+  <script src="scripts/footer-loader.js" defer></script>
+</body>
+</html>

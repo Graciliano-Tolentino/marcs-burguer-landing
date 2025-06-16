@@ -1,0 +1,119 @@
+/* ============================================================================
+🍔 home.css – Landing Page Marc’s Burguer
+📦 Combos em destaque + CTA direto para pedido via iFood
+============================================================================ */
+
+/* 🍔 Container dos cards de combos */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--espaco-lg);
+  padding: var(--espaco-md) var(--espaco-sm);
+  max-width: 1200px;
+  margin: 0 auto var(--espaco-xl);
+}
+
+/* 📦 Card individual do combo */
+.card {
+  background-color: var(--cor-escura);
+  border-radius: 12px;
+  box-shadow: var(--sombra-media);
+  padding: var(--espaco-md);
+  text-align: center;
+  text-decoration: none;
+  color: var(--cor-texto);
+  max-width: 300px;
+  flex: 1 1 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: var(--espaco-sm);
+}
+
+.card h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--cor-secundaria);
+}
+
+.card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--cor-media);
+  line-height: 1.5;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-forte);
+}
+
+/* ============================================================================
+📬 Bloco CTA direto para pedido via iFood
+============================================================================ */
+
+.cta {
+  background-color: var(--cor-principal);
+  padding: var(--espaco-xl) var(--espaco-md);
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: var(--sombra-leve);
+  margin-top: var(--espaco-xl);
+}
+
+.cta-texto {
+  max-width: 720px;
+  margin: 0 auto var(--espaco-md);
+  font-size: 1.1rem;
+  color: var(--cor-clara);
+  line-height: 1.6;
+}
+
+/* 🎯 Botão iFood */
+.botao-acao {
+  display: inline-block;
+  background-color: var(--cor-destaque);
+  color: var(--cor-clara);
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: var(--espaco-md);
+}
+
+.botao-acao:hover {
+  background-color: var(--cor-secundaria);
+  transform: scale(1.05);
+}
+
+/* ============================================================================
+📱 Responsividade Mobile First
+============================================================================ */
+
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+
+  .cta {
+    padding: var(--espaco-lg) var(--espaco-sm);
+  }
+
+  .botao-acao {
+    width: 100%;
+    font-size: 1rem;
+  }
+}

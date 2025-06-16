@@ -1,0 +1,173 @@
+/* ================================================================================
+🍔 base.css – Núcleo Visual do Projeto Marc’s Burguer
+🎯 Reset, Tipografia, Tokens Visuais Globais, Acessibilidade
+================================================================================ */
+
+/* 🔄 RESET UNIVERSAL */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌐 HTML BASE */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+  font-size: 100%;
+}
+
+/* 🍔 Corpo do site */
+body {
+  font-family: 'Inter', Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ================================================================================
+🎨 TOKENS VISUAIS – VARIÁVEIS CSS GLOBAIS
+================================================================================ */
+
+:root {
+  /* 🍔 Cores institucionais Marc’s Burguer */
+  --cor-principal: #B22222; /* vermelho gourmet */
+  --cor-secundaria: #FFD700; /* dourado */
+  --cor-destaque: #E60000; /* vermelho vibrante (hover) */
+
+  --cor-clara: #FFFFFF;
+  --cor-media: #CCCCCC;
+  --cor-escura: #1E1E1E; /* grafite fundo */
+
+  --cor-texto: #FFFFFF;
+  --cor-fundo: #1E1E1E; /* fundo principal escuro */
+
+  --cor-sucesso: #1da851;
+  --cor-erro: #b91c1c;
+  --cor-alerta: #e53935;
+  --cor-info: #4d7c0f;
+
+  --cor-borda: #333;
+  --cor-placeholder: #777;
+
+  /* ✨ Sombras */
+  --sombra-leve: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --sombra-media: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --sombra-forte: 0 8px 24px rgba(0, 0, 0, 0.3);
+
+  /* 📏 Espaçamentos base */
+  --espaco-xs: 0.5rem;
+  --espaco-sm: 1rem;
+  --espaco-md: 1.5rem;
+  --espaco-lg: 2rem;
+  --espaco-xl: 3rem;
+}
+
+/* ================================================================================
+🔤 TIPOGRAFIA GLOBAL – Hierarquia Gourmet e Leitura Clara
+================================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Anton', sans-serif;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--cor-secundaria);
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.45rem; }
+h4 { font-size: 1.2rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.9rem; }
+
+p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  margin-bottom: var(--espaco-sm);
+  color: var(--cor-media);
+}
+
+/* ================================================================================
+🧩 ELEMENTOS GLOBAIS – Containers, Imagens, Inputs, Placeholder
+================================================================================ */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--espaco-sm);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+::placeholder {
+  color: var(--cor-placeholder);
+  opacity: 1;
+}
+
+/* ================================================================================
+♿️ ACESSIBILIDADE & NAVEGAÇÃO POR TECLADO
+================================================================================ */
+
+[hidden] {
+  display: none !important;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px dashed var(--cor-destaque);
+  outline-offset: 4px;
+  transition: outline 0.3s ease;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* ================================================================================
+📱 MOBILE FIRST – Ajustes tipográficos para telas menores
+================================================================================ */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 95%;
+  }
+
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.3rem; }
+}
+
+/* 🎯 Botão padrão – ação (ex: pedido iFood) */
+.botao-acao {
+  display: inline-block;
+  background-color: var(--cor-principal);
+  color: var(--cor-clara);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: var(--sombra-leve);
+}
+
+.botao-acao:hover {
+  background-color: var(--cor-destaque);
+  box-shadow: var(--sombra-media);
+}
