@@ -1,0 +1,57 @@
+/* ============================================================================
+🍔 Estilo do Rodapé – footer.html
+🎯 Centralização, responsividade e elegância visual
+============================================================================ */
+
+.rodape-site {
+  background-color: var(--cor-escura);
+  color: var(--cor-media);
+  padding: var(--espaco-xl) var(--espaco-md);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.rodape-site p {
+  margin-bottom: var(--espaco-sm);
+  font-size: 0.95rem;
+}
+
+.rodape-direitos {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cor-clara);
+}
+
+.rodape-institucional {
+  margin-top: var(--espaco-sm);
+  color: var(--cor-media);
+  font-size: 0.9rem;
+}
+
+.rodape-institucional strong {
+  color: var(--cor-clara);
+}
+
+.frase-slogan {
+  font-style: italic;
+  color: var(--cor-secundaria);
+  margin-top: var(--espaco-sm);
+  font-size: 1.05rem;
+}
+
+/* Responsivo – Rodapé com bom espaçamento em telas menores */
+@media (max-width: 768px) {
+  .rodape-site {
+    padding: var(--espaco-lg) var(--espaco-sm);
+  }
+
+  .rodape-site p {
+    font-size: 0.9rem;
+  }
+
+  .frase-slogan {
+    font-size: 1rem;
+  }
+}

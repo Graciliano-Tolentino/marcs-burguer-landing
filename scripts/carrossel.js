@@ -1,12 +1,11 @@
 // ===========================================================================================
-// 📜 scripts/carrossel.js — Carrossel Inteligente Marc's Burguer (v1.0)
-// 🍔 Swipe no mobile, botões flutuantes no desktop, múltiplas instâncias, acessibilidade total
+// 📜 carrossel.js — Carrossel Inteligente com Modo Fullscreen Integrado (v2.0)
+// 🍔 Swipe no mobile, botões flutuantes, acessibilidade total, fullscreen elegante
 // ===========================================================================================
 
 (() => {
   document.addEventListener('DOMContentLoaded', () => {
     const carrosseis = document.querySelectorAll('.carrossel');
-
     if (!carrosseis.length) return;
 
     carrosseis.forEach((carrossel, indice) => {
@@ -17,6 +16,7 @@
       const idCarrossel = carrossel.id || `carrossel-${indice}`;
       carrossel.id = idCarrossel;
 
+      // Criar botões de navegação
       const btnAnterior = document.createElement('button');
       btnAnterior.className = 'carrossel-controle carrossel-prev';
       btnAnterior.setAttribute('aria-label', 'Imagem anterior');
@@ -31,15 +31,25 @@
 
       carrossel.append(btnAnterior, btnProximo);
 
+      // Criar announcer acessível para leitores de tela
       const announcer = document.createElement('div');
       announcer.id = `announce-${idCarrossel}`;
       announcer.className = 'sr-only';
       announcer.setAttribute('aria-live', 'polite');
       carrossel.appendChild(announcer);
 
-      slides.forEach((slide) => {
+      // Configuração inicial dos slides
+      slides.forEach((slide, i) => {
         slide.classList.add('transicao');
         slide.setAttribute('loading', 'lazy');
+        slide.setAttribute('tabindex', '-1');
+        slide.setAttribute('role', 'tabpanel');
+
+        // Ativação do modo fullscreen ao clicar na imagem
+        slide.addEventListener('click', () => {
+          const container = slide.closest('.carrossel-container');
+          if (container) abrirCarrosselFullscreen(container);
+        });
       });
 
       const mostrarSlide = (indice) => {
@@ -49,7 +59,6 @@
           slide.classList.toggle('inativo', !ativo);
           slide.setAttribute('aria-hidden', !ativo);
           slide.setAttribute('tabindex', ativo ? '0' : '-1');
-          slide.setAttribute('role', 'tabpanel');
           slide.setAttribute('aria-label', `Slide ${i + 1} de ${slides.length}`);
         });
 
@@ -69,6 +78,7 @@
 
       mostrarSlide(indiceAtual);
 
+      // Swipe para mobile
       let touchStartX = 0;
       let touchEndX = 0;
 
@@ -86,8 +96,7 @@
 })();
 
 // ===========================================================================================
-// 🖥️ Modo fullscreen — Galeria Expandida Marc's Burguer (v1.0)
-// 🍟 Foco restaurado, reversibilidade animada, controle por teclado
+// 🖥️ Modo Fullscreen — Galeria Expandida Marc's Burguer com Clareza e Controle
 // ===========================================================================================
 
 (() => {
@@ -100,8 +109,7 @@
 
     focoAnterior = document.activeElement;
     carrossel.classList.add('fullscreen', 'transicao');
-
-    void carrossel.offsetWidth;
+    void carrossel.offsetWidth; // Forçar repaint
     requestAnimationFrame(() => {
       carrossel.classList.add('ativo');
     });
@@ -157,7 +165,7 @@
 })();
 
 // ===========================================================================================
-// 🍔 API Pública — Controle Externo via window.MarcsBurguerCarrossel
+// 🌐 API Pública — Controle Externo do Carrossel (Modular e Expansível)
 // ===========================================================================================
 
 window.MarcsBurguerCarrossel = {

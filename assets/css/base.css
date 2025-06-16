@@ -171,3 +171,81 @@ html:focus-within {
   background-color: var(--cor-destaque);
   box-shadow: var(--sombra-media);
 }
+
+/* ================================================================================  
+🔠 SUPORTE A EMOJIS E GLIFOS COMUNICATIVOS  
+================================================================================ */
+body, .lista-ingredientes li {
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-smoothing: antialiased;
+  unicode-bidi: isolate;
+  word-break: break-word;
+}
+
+/* 🎯 Emoji alinhado em linha, especialmente para listas */
+.lista-ingredientes li {
+  line-height: 1.6;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+/* 🧭 Suporte nativo a contêineres em tela cheia */
+:fullscreen,
+:-webkit-full-screen,
+:-moz-full-screen {
+  background-color: #000;
+  overflow: hidden;
+}
+
+/* 🔒 Segurança extra para fullscreen no body */
+body:fullscreen {
+  overflow: hidden;
+}
+
+/* ================================================================================  
+🔘 BOTÕES GLOBAIS – Integração com Fullscreen, Ação e Fechamento  
+================================================================================ */
+button {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* 🖼️ Imagens em qualquer contexto (fullscreen, carrossel, responsivo) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🎞️ Suporte global a animações e transições suaves */
+.transicao {
+  transition: all 0.25s ease-in-out !important;
+}
+
+/* ♿️ Reforço visual de foco em botões e interações acessíveis */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px dashed var(--cor-secundaria);
+  outline-offset: 4px;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* 📱 Ajustes responsivos leves em botões de ação */
+@media (max-width: 600px) {
+  .botao-acao {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
