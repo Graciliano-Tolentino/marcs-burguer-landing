@@ -7,18 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- 🎯 SEO Estratégico com Identidade Institucional -->
-  <title>Irrigação Inteligente – Marc’s Burguer</title>
+  <title>Combo Picanha Premium – Marc’s Burguer</title>
   <meta name="description" content="Combo Picanha Premium com hambúrguer artesanal 180g, queijo prato derretido, molho especial da casa, batatas fritas crocantes e refri gelado. Peça já pelo iFood em Cotia/SP!" />
   <meta name="keywords" content="combo picanha, hambúrguer artesanal, queijo prato, molho exclusivo, batatas fritas, Marc's Burguer, delivery Cotia, iFood" />
   <meta name="author" content="Equipe Marc’s Burguer" />
   <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mburguer.com.br/combo-picanha.html" />
 
   <!-- 🌐 Open Graph para Compartilhamento -->
   <meta property="og:title" content="Combo Picanha Premium – Marc’s Burguer" />
   <meta property="og:description" content="Hambúrguer artesanal de picanha 180g, queijo prato derretido e molho exclusivo, com fritas crocantes e refri. Peça via iFood em Cotia/SP." />
-  <meta property="og:image" content="assets/images/combo-picanha-1.jpg" />
+  <meta property="og:image" content="https://mburguer.com.br/assets/images/combo-picanha-1.jpg" />
   <meta property="og:url" content="https://mburguer.com.br/combo-picanha.html" />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="product" />
 
   <!-- 📱 PWA e Identidade -->
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
@@ -34,6 +35,31 @@
   <link rel="stylesheet" href="assets/css/responsivo.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
 
+  <!-- 🔎 Dados Estruturados Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Combo Picanha Premium",
+    "image": [
+      "https://mburguer.com.br/assets/images/combo-picanha-1.jpg",
+      "https://mburguer.com.br/assets/images/combo-picanha-2.jpg",
+      "https://mburguer.com.br/assets/images/combo-picanha-3.jpg"
+    ],
+    "description": "Hambúrguer artesanal 180g com queijo prato derretido, molho especial da casa, batatas fritas crocantes e refrigerante gelado.",
+    "brand": {
+      "@type": "Organization",
+      "name": "Marc’s Burguer"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.ifood.com.br/delivery/marcs-burguer?produto=picanha-premium",
+      "priceCurrency": "BRL",
+      "price": "42.90",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -92,7 +118,7 @@
 
         <!-- 📲 Botão de orçamento via WhatsApp -->
         <div class="chamada-final">
-          <h3>Solicite seu orçamento agora mesmo</h3>
+          <h3>Faça seu Pedido!</h3>
           <p>Garanta agora seu Combo Picanha Premium com entrega rápida e segura pelo nosso parceiro oficial:</p>
           <a href="https://www.ifood.com.br/delivery/marcs-burguer?produto=picanha-premium"
            target="_blank"
