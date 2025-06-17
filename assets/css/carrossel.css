@@ -1,45 +1,133 @@
 /* =============================================================================
-🎠 carrossel.css — Galeria Inteligente Marc's Burguer (v4.1 Ultimate)
-🍔 Swipe, Acessibilidade Total, Fullscreen Premium, Centralização Absoluta
+🎠 carrossel.css — Galeria Inteligente Marc's Burguer (v5.0 Supreme)
+🍔 Swipe mobile, botões flutuantes desktop, acessibilidade gourmet e fullscreen envolvente
 ============================================================================= */
 
-/* 🌐 Fullscreen elegante com experiência visual perfeita */
+/* 🧱 Container externo do carrossel */
+.carrossel-container {
+  display: block;
+  margin-inline: auto;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0;
+}
+
+/* 🎢 Linha horizontal de imagens */
+.carrossel {
+  position: relative;
+  display: flex;
+  gap: var(--espaco-md);
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: start;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: var(--espaco-sm);
+}
+
+/* 🖼️ Imagens do carrossel */
+.carrossel img {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  max-width: 100%;
+  max-height: 480px;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: var(--sombra-media);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carrossel img:hover {
+  transform: scale(1.025);
+  box-shadow: var(--sombra-forte);
+}
+
+.carrossel img:focus {
+  outline: 2px solid var(--cor-secundaria);
+  outline-offset: 4px;
+}
+
+/* 🔘 Botões de navegação desktop */
+.carrossel-controle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #1c1c1c;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.carrossel-controle:hover {
+  background-color: #eeeeee;
+  transform: translateY(-50%) scale(1.1);
+}
+.carrossel-prev { left: 0; }
+.carrossel-next { right: 0; }
+
+@media (hover: none) and (pointer: coarse) {
+  .carrossel-controle { display: none; }
+}
+
+/* ♿ Texto invisível para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 🎠 Fullscreen refinado e imersivo */
 .carrossel.fullscreen {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(0, 0, 0, 0.92);
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow-x: auto;
+  gap: 2rem;
+  scroll-snap-type: x mandatory;
   padding: 2rem clamp(1rem, 5vw, 3rem);
-  transition: opacity 0.25s ease-in-out;
   opacity: 0;
   pointer-events: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-
 .carrossel.fullscreen.ativo {
   opacity: 1;
   pointer-events: auto;
 }
-
-/* 🖼️ Imagens em fullscreen com centralização e impacto visual máximo */
+.carrossel.fullscreen::-webkit-scrollbar {
+  display: none;
+}
 .carrossel.fullscreen img {
   max-height: 85vh;
   max-width: 95vw;
-  object-fit: contain;
-  margin: auto;
   border-radius: 12px;
-  box-shadow: var(--sombra-forte);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: contain;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
 }
-
 .carrossel.fullscreen img:hover {
   transform: scale(1.02);
 }
 
-/* 🧷 Botão fechar fullscreen com acessibilidade e estilo superior */
+/* 🔘 Botão de saída do fullscreen */
 #fecharFullscreen {
   position: fixed;
   top: 1.2rem;
@@ -56,30 +144,22 @@
   box-shadow: var(--sombra-media);
   transition: background-color 0.25s ease, transform 0.25s ease;
 }
-
 #fecharFullscreen:hover {
   background-color: var(--cor-secundaria);
   transform: scale(1.05);
 }
-
 #fecharFullscreen:focus-visible {
   outline: 2px dashed var(--cor-secundaria);
   outline-offset: 4px;
 }
 
-/* 🚫 Remover setinhas de controle permanentemente */
-.carrossel-controle {
-  display: none !important;
-}
-
-/* 🎛️ Slide ativo/inativo com transição suave e acessível */
+/* 🎞️ Slides ativos e inativos */
 .carrossel img.ativo {
   opacity: 1;
   visibility: visible;
   position: relative;
   z-index: 1;
 }
-
 .carrossel img.inativo {
   opacity: 0;
   visibility: hidden;
@@ -89,34 +169,97 @@
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* ♿️ Acessibilidade visual para navegação por teclado */
-.carrossel img:focus {
-  outline: 2px solid var(--cor-secundaria);
-  outline-offset: 4px;
-}
-
-/* ✨ Transições padrão refinadas */
+/* ✨ Transição global */
 .transicao {
-  transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out !important;
 }
 
-/* 📱 Responsividade aprimorada para mobile */
-@media (hover: none) and (pointer: coarse) {
-  .carrossel-controle {
-    display: none;
+/* 🌙 Tema escuro responsivo (opcional) */
+@media (prefers-color-scheme: dark) {
+  .carrossel-container {
+    background-color: #1e1e1e;
+  }
+  .carrossel img {
+    background-color: #2a2a2a;
   }
 }
 
-/* 🔍 Scrollbar estilizada para melhor UX */
-.carrossel-container::-webkit-scrollbar {
-  height: 6px;
+/* ============================================================================
+🎥 Suporte adicional a vídeos no carrossel – para mídia visual dinâmica
+============================================================================ */
+.carrossel video {
+  border-radius: 12px;
+  max-height: 480px;
+  object-fit: cover;
+  box-shadow: var(--sombra-media);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.carrossel-container::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 3px;
+.carrossel video:hover {
+  transform: scale(1.02);
+  box-shadow: var(--sombra-forte);
 }
 
-.carrossel-container::-webkit-scrollbar-track {
-  background: transparent;
+/* ============================================================================
+🖱️ Hover responsivo somente em dispositivos com ponteiro (desktop)
+============================================================================ */
+@media (hover: hover) {
+  .carrossel img:hover {
+    transform: scale(1.025);
+    box-shadow: var(--sombra-forte);
+  }
+
+  .carrossel.fullscreen img:hover {
+    transform: scale(1.02);
+  }
+
+  .carrossel video:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* ============================================================================
+🔘 Botões de navegação lateral – Prev / Next
+🎯 Estilo flutuante gourmet com foco visual e interação acessível
+============================================================================ */
+.carrossel-prev,
+.carrossel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #1c1c1c;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carrossel-prev:hover,
+.carrossel-next:hover {
+  background-color: #eeeeee;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* 📍 Posição lateral */
+.carrossel-prev {
+  left: 1rem;
+}
+
+.carrossel-next {
+  right: 1rem;
+}
+
+/* 📵 Oculta botões em dispositivos de toque */
+@media (hover: none) and (pointer: coarse) {
+  .carrossel-prev,
+  .carrossel-next {
+    display: none;
+  }
 }
