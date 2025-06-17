@@ -1,20 +1,20 @@
 /* ==========================================================================================
-🎨 header.css – Estilos exclusivos para o cabeçalho institucional do Marc’s Burguer
-🌿 Foco em identidade, centralização, acessibilidade e responsividade
+🍔 header.css – Estilos exclusivos para o cabeçalho institucional do Marc’s Burguer
+🔥 Foco em identidade gourmet, centralização elegante, acessibilidade e responsividade
 ========================================================================================== */
 
-/* 🟩 Estrutura principal */
+/* 🔴 Estrutura principal */
 .header-principal {
   position: relative;
   width: 100%;
-  background-color: #1C3D27; /* Verde institucional */
-  color: #ffffff;
+  background-color: var(--cor-principal); /* Vermelho gourmet institucional */
+  color: var(--cor-clara);
   text-align: center;
   padding: 3rem 1rem 2.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--sombra-media);
 }
 
-/* 🌿 Logotipo central */
+/* 🍔 Logotipo central */
 .logo-container {
   display: flex;
   justify-content: center;
@@ -31,26 +31,29 @@
 /* 📛 Título e slogan */
 .titulo-site {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 800;
   margin: 0;
   line-height: 1.1;
-  color: white; /* ← Esta linha torna o texto branco */
+  font-family: 'Poppins', sans-serif;
+  color: var(--cor-clara);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
-
 
 .slogan {
   font-size: 1.15rem;
-  font-weight: 300;
+  font-weight: 400;
+  font-family: 'Cabin', sans-serif;
   margin-top: 0.5rem;
-  color: #f0f0f0;
+  color: var(--cor-suave);
+  opacity: 0.95;
 }
 
 .slogan strong {
   font-weight: 600;
-  color: #FFD700; /* Ouro Marc’s Burguer */
+  color: var(--cor-secundaria); /* Dourado vibrante */
 }
 
-/* 🔐 Botão de login (ícone com texto abaixo) */
+/* 🔐 Botão de login (ícone + texto) */
 .botao-login-superior {
   position: absolute;
   top: 1rem;
@@ -80,17 +83,17 @@
 
 .texto-login {
   font-size: 0.75rem;
-  color: var(--branco-puro, #ffffff); /* Branco padrão */
+  color: var(--cor-clara);
   line-height: 1;
   margin: 0;
   transition: color 0.3s ease;
 }
 
-/* 🎯 Comportamento interativo */
+/* ✨ Comportamento ao interagir */
 .botao-login-superior:focus .texto-login,
 .botao-login-superior:active .texto-login,
 .botao-login-superior:hover .texto-login {
-  color: var(--ouro-agroverso, #FFD700); /* Ouro ao interagir */
+  color: var(--cor-secundaria); /* Brilho dourado ao passar o mouse */
 }
 
 /* ==========================================================================================
