@@ -161,3 +161,23 @@
     padding: 0 var(--espaco-sm);
   }
 }
+
+.botao-ifood-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.botao-ifood-img {
+  max-width: 280px; /* ajuste fino do tamanho desejado */
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.botao-ifood-img:hover {
+  transform: scale(1.03);
+}
