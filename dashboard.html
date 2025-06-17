@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- =====================================================================================
+  🌐 dashboard-unificado.html – Painel Personalizado Marc’s Burguer
+  🔐 Segurança regenerativa, UX dinâmica e controle por perfil com base em JWT
+  ====================================================================================== -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Painel • Marc’s Burguer</title>
+  <meta name="description" content="Painel adaptado por perfil de acesso no sistema Marc’s Burguer. Veja funções exclusivas conforme seu tipo de usuário." />
+  <meta name="author" content="Equipe Marc’s Burguer" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+</head>
+
+<body class="dashboard-body">
+  <main class="dashboard-container" role="main" aria-label="Painel do Usuário Marc’s Burguer">
+    <section class="dashboard-box" aria-labelledby="painel-titulo">
+      <h1 id="painel-titulo" class="dashboard-title">🎯 Painel Personalizado Marc’s Burguer</h1>
+
+      <p class="dashboard-subtitle" id="subtitulo-perfil">
+        Este painel foi ajustado dinamicamente conforme seu tipo de usuário.
+      </p>
+
+      <div id="mensagem-perfil" class="dashboard-message" role="region" aria-live="polite">
+        <!-- Conteúdo será injetado aqui -->
+      </div>
+
+      <div class="dashboard-footer">
+        <button onclick="logout()" class="btn-secondary" aria-label="Encerrar sessão e retornar ao login">🚪 Sair</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const mensagemEl = document.getElementById("mensagem-perfil");
+      const subtitulo = document.getElementById("subtitulo-perfil");
+
+      // 🧩 Tenta recuperar e decodificar o token JWT simulado
+      const token = localStorage.getItem("agro_token");
+      if (!token) {
+        alert("⚠️ Sessão não encontrada. Faça login novamente.");
+        return window.location.href = "login.html";
+      }
+
+      let payload;
+      try {
+        payload = JSON.parse(atob(token));
+      } catch (erro) {
+        console.error("❌ Token corrompido:", erro);
+        localStorage.removeItem("agro_token");
+        return window.location.href = "login.html";
+      }
+
+      const { email, perfil, exp } = payload;
+
+      if (!email || !perfil || !exp || Date.now() > exp) {
+        alert("⚠️ Sessão expirada ou inválida. Faça login novamente.");
+        localStorage.removeItem("agro_token");
+        return window.location.href = "login.html";
+      }
+
+      // 🎨 Conteúdos dinâmicos por tipo de perfil
+      const conteudos = {
+        administrador: {
+          titulo: "👑 Administrador Geral",
+          texto: `
+            Você possui acesso irrestrito ao sistema.
+            <ul>
+              <li>Gerenciar usuários e permissões</li>
+              <li>Visualizar relatórios e gráficos analíticos</li>
+              <li>Acompanhar projetos e configurações globais</li>
+            </ul>`
+        },
+        gerente: {
+          titulo: "📊 Gerente",
+          texto: `
+            Seu painel permite visão operacional e estratégica.
+            <ul>
+              <li>Coordenação de equipes e validação de entregas</li>
+              <li>Controle de produção e relatórios gerenciais</li>
+            </ul>`
+        },
+        lider: {
+          titulo: "🧭 Líder de Equipe",
+          texto: `
+            Você lidera execuções e validações de campo.
+            <ul>
+              <li>Atribuição de ordens de serviço</li>
+              <li>Envio de relatórios georreferenciados</li>
+            </ul>`
+        },
+        tecnico: {
+          titulo: "🔧 Técnico de Campo",
+          texto: `
+            Foco em execução prática e mobilidade.
+            <ul>
+              <li>Envio de fotos e medições</li>
+              <li>Atualização de sensores e feedback de campo</li>
+            </ul>`
+        }
+      };
+
+      if (conteudos[perfil]) {
+        const c = conteudos[perfil];
+        mensagemEl.innerHTML = `<h2>${c.titulo}</h2><div class="perfil-texto">${c.texto}</div>`;
+      } else {
+        mensagemEl.innerHTML = `
+          <h2>⚠️ Perfil não reconhecido</h2>
+          <p>Não foi possível identificar seu perfil. <a href="login.html">Voltar ao login</a>.</p>`;
+        subtitulo.textContent = "Erro na identificação da sessão.";
+      }
+
+      // ✅ Registro global disponível
+      window.usuarioAgroverso = { email, perfil };
+    });
+  </script>
+
+  <!-- 🔁 Scripts institucionais -->
+  <script src="scripts/auth.js" defer></script>
+  <script src="scripts/logout.js" defer></script>
+</body>
+</html>
+

@@ -1,9 +1,9 @@
 /* ============================================================================
-🍔 home.css – Landing Page Marc’s Burguer
-📦 Combos em destaque + CTA direto para pedido via iFood
+🏠 home.css – Estilos da Landing Page Marc’s Burguer
+🎓 Cursos Inteligentes + CTA Conversivo + Formulário de Orçamento
 ============================================================================ */
 
-/* 🍔 Container dos cards de combos */
+/* 🎓 Container de cards dos cursos */
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -14,9 +14,9 @@
   margin: 0 auto var(--espaco-xl);
 }
 
-/* 📦 Card individual do combo */
+/* 📦 Card individual */
 .card {
-  background-color: var(--cor-escura);
+  background-color: var(--cor-clara);
   border-radius: 12px;
   box-shadow: var(--sombra-media);
   padding: var(--espaco-md);
@@ -36,16 +36,14 @@
 }
 
 .card h3 {
-  font-family: 'Anton', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  color: var(--cor-secundaria);
+  color: var(--cor-principal);
 }
 
 .card p {
-  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
-  color: var(--cor-media);
+  color: var(--cor-texto);
   line-height: 1.5;
 }
 
@@ -55,14 +53,15 @@
 }
 
 /* ============================================================================
-📬 Bloco CTA direto para pedido via iFood
+📬 Bloco CTA com formulário
 ============================================================================ */
 
 .cta {
-  background-color: var(--cor-principal);
+  background-color: var(--cor-media);
   padding: var(--espaco-xl) var(--espaco-md);
   text-align: center;
   border-radius: 16px;
+  border: 1px solid var(--cor-borda);
   box-shadow: var(--sombra-leve);
   margin-top: var(--espaco-xl);
 }
@@ -70,17 +69,17 @@
 .cta-texto {
   max-width: 720px;
   margin: 0 auto var(--espaco-md);
-  font-size: 1.1rem;
-  color: var(--cor-clara);
+  font-size: 1rem;
+  color: var(--cor-texto);
   line-height: 1.6;
 }
 
-/* 🎯 Botão iFood */
-.botao-acao {
+/* 💬 Botão WhatsApp */
+.whatsapp-btn {
   display: inline-block;
-  background-color: var(--cor-destaque);
+  background-color: var(--cor-secundaria);
   color: var(--cor-clara);
-  padding: 1rem 2rem;
+  padding: 0.9rem 1.6rem;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 10px;
@@ -89,9 +88,50 @@
   margin-bottom: var(--espaco-md);
 }
 
-.botao-acao:hover {
-  background-color: var(--cor-secundaria);
+.whatsapp-btn:hover {
+  background-color: var(--cor-sucesso);
   transform: scale(1.05);
+}
+
+/* 🧾 Formulário de orçamento */
+.formulario-orcamento {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-md);
+}
+
+.formulario-orcamento label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--cor-principal);
+}
+
+.formulario-orcamento input,
+.formulario-orcamento select {
+  padding: 0.75rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--cor-clara);
+}
+
+.formulario-orcamento button {
+  background-color: var(--cor-principal);
+  color: var(--cor-clara);
+  padding: 0.85rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-orcamento button:hover {
+  background-color: #025e36;
 }
 
 /* ============================================================================
@@ -112,8 +152,12 @@
     padding: var(--espaco-lg) var(--espaco-sm);
   }
 
-  .botao-acao {
+  .whatsapp-btn {
     width: 100%;
     font-size: 1rem;
+  }
+
+  .formulario-orcamento {
+    padding: 0 var(--espaco-sm);
   }
 }

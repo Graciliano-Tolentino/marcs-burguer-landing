@@ -1,39 +1,55 @@
 {
-  "name": "Marc’s Burguer – Sabor Artesanal que Supera Expectativas",
+  "name": "Marc’s Burguer – Tecnologia Regenerativa com Sabedoria, Força e Beleza",
   "short_name": "Marc’s Burguer",
-  "description": "Os melhores hambúrgueres artesanais de Cotia/SP: Combo Picanha, Frango Empanado e X-Tudo. Peça direto pelo iFood!",
+  "description": "Plataforma regenerativa com soluções inteligentes em irrigação, hidroponia e energia solar. Conecte ancestralidade com inovação no agro brasileiro.",
   "lang": "pt-BR",
   "dir": "ltr",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "theme_color": "#1E1E1E",
-  "background_color": "#1E1E1E",
-  "categories": ["food", "restaurant", "delivery", "fast-food"],
+  "theme_color": "#b22222",
+  "background_color": "#f6f9f2",
+  "categories": ["agriculture", "technology", "education", "sustainability"],
   "icons": [
     {
-      "src": "assets/images/logo-192.png",
+      "src": "assets/logo-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "assets/images/logo-512.png",
+      "src": "assets/logo-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "assets/images/logo-monochrome.svg",
+      "src": "assets/logo-monochrome.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "monochrome"
     },
     {
-      "src": "assets/images/favicon.ico",
+      "src": "assets/favicon.ico",
       "sizes": "32x32",
       "type": "image/x-icon"
     }
   ]
 }
+
+"locales": {
+  "en": {
+    "name": "Marc’s Burguer – Regenerative Agro Tech",
+    "short_name": "Marc’s Burguer",
+    "description": "Regenerative platform with smart irrigation, hydroponics and solar energy."
+  },
+  "es": {
+    "name": "Marc’s Burguer – Tecnología Regenerativa",
+    "short_name": "Marc’s Burguer",
+    "description": "Soluciones regenerativas para el agro: riego, hidroponía y energía solar inteligente."
+  }
+}
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#b22222">

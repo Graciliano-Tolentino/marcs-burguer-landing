@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- ✅ Configurações fundamentais -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 🎯 SEO estratégico com identidade institucional -->
+  <title>Hidroponia Inteligente – Marc’s Burguer</title>
+  <meta name="description" content="Soluções modulares de combo Frango Empanado Marc’s Burguer com sensores, automação regenerativa e controle total via app e painel web." />
+  <meta name="keywords" content="combo Frango Empanado, agroverso, sensores pH EC temperatura, agricultura urbana, controle remoto, agricultura regenerativa" />
+  <meta name="author" content="Equipe Marc’s Burguer" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- 🌐 Open Graph para redes sociais -->
+  <meta property="og:title" content="Hidroponia Inteligente – Marc’s Burguer" />
+  <meta property="og:description" content="Tecnologia regenerativa de cultivo com sensores, automação e eficiência total. Conheça a solução Marc’s Burguer." />
+  <meta property="og:image" content="assets/images/combo-frango-1.jpg" />
+  <meta property="og:url" content="https://mburguer.com.br/produto-hidroponia.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- 🖼️ Identidade visual e PWA -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#b22222" />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- 🎨 Estilos Modulares do Marc’s Burguer -->
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/produtos.css" />
+  <link rel="stylesheet" href="assets/css/carrossel.css" />
+  <link rel="stylesheet" href="assets/css/responsivo.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+
+</head>
+
+<body>
+  <!-- ⬆️ Cabeçalho institucional -->
+  <div data-include="partials/header-produto.html"></div>
+
+
+  <!-- 🌿 Conteúdo principal do produto -->
+  <main class="conteudo-produto" role="main" aria-labelledby="titulo-hidroponia">
+    <section class="produto-destaque">
+      <h2 id="titulo-hidroponia">Hidroponia Inteligente</h2>
+      <p class="subtitulo-produto">
+        Cultivo de precisão com sensores, automação regenerativa e controle digital
+      </p>
+
+      <!-- 🎠 Carrossel com integração total -->
+      <section aria-labelledby="galeria-hidroponia">
+        <h3 id="galeria-hidroponia" class="secao-titulo">Galeria do Sistema</h3>
+        <div class="carrossel-container" aria-label="Galeria de imagens do sistema de hidroponia Marc’s Burguer" onclick="abrirCarrosselFullscreen(this)">
+          <div class="carrossel transicao" id="carrossel-hidroponia">
+            <img src="assets/images/combo-frango-1.jpg" alt="Sistema vertical de hidroponia Marc’s Burguer em estufa iluminada" loading="lazy" />
+            <img src="assets/images/combo-frango-2.jpg" alt="Sensores de pH e EC inseridos em reservatório de nutrientes" loading="lazy" />
+            <img src="assets/images/combo-frango-3.jpg" alt="Painel de monitoramento Marc’s Burguer exibindo níveis de nutrientes e temperatura" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 🔘 Botão de fechar fullscreen -->
+      <button id="fecharFullscreen" onclick="fecharCarrosselFullscreen()" hidden aria-hidden="true">Fechar</button>
+
+      <!-- 🧠 Seção de descrição funcional e aplicada -->
+      <section class="descricao-produto">
+
+        <p> </p>
+        <p> </p>
+        <p> </p>
+
+        <h3>Sobre o sistema</h3>
+        <p>
+          A <strong>Hidroponia Inteligente Marc’s Burguer</strong> combina sensores de pH, condutividade elétrica (EC) e temperatura da água com um sistema modular, automatizado e vertical. O controle é feito via aplicativo móvel ou painel web responsivo, permitindo gestão completa da solução nutritiva e do ambiente de cultivo.
+        </p>
+
+        <h3>Benefícios principais</h3>
+        <ul>
+          <li>💧 Redução de até <strong>90% no uso de água</strong> comparado à agricultura tradicional</li>
+          <li>📊 Monitoramento contínuo de <strong>pH, EC e temperatura</strong> em tempo real</li>
+          <li>⚙️ Correção automática de nutrientes com base em leituras dos sensores</li>
+          <li>🏙️ Estrutura adaptável para <strong>ambientes urbanos e espaços reduzidos</strong></li>
+          <li>📱 Interface digital com <strong>dashboard intuitivo via app ou navegador</strong></li>
+        </ul>
+
+        <h3>Aplicações recomendadas</h3>
+        <p>
+          Recomendado para <strong>hortas urbanas, produção escolar, containers agrícolas, agricultura familiar intensiva</strong> e projetos de segurança alimentar regenerativa em cidades ou zonas rurais.
+        </p>
+
+        <!-- 📲 Botão de orçamento via WhatsApp -->
+        <div class="chamada-final">
+          <h3>Solicite seu orçamento agora mesmo</h3>
+          <p>Atendimento especializado para sua propriedade, comunidade ou iniciativa regenerativa.</p>
+          <a href="https://www.ifood.com.br/delivery/marcs-burguer Tenho interesse no sistema de Hidroponia Inteligente do Marc’s Burguer e gostaria de um orçamento personalizado."
+             target="_blank"
+             rel="noopener noreferrer"
+             class="botao-acao"
+             aria-label="Solicitar orçamento via WhatsApp com a equipe Marc’s Burguer">
+            📲 Solicitar orçamento via WhatsApp
+          </a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- 🧭 Rodapé Institucional -->
+  <div data-include="footer"></div>
+
+
+  <!-- 🧠 Scripts Essenciais -->
+  <script src="scripts/router-auto.js" defer></script>
+  <script src="scripts/menu-lateral.js" defer></script>
+  <script src="scripts/carrossel.js" defer></script>
+  <script src="scripts/footer-loader.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- ✅ Codificação e responsividade -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 🎯 SEO e Identidade Estratégica -->
+  <title>Energia Solar Inteligente – Marc’s Burguer</title>
+  <meta name="description" content="Sistema Marc’s Burguer de energia solar com monitoramento remoto, eficiência fotovoltaica e integração a comunidades regenerativas. Geração limpa com controle digital." />
+  <meta name="keywords" content="energia solar, agroverso, painel solar, fotovoltaica, geração autônoma, microgrid, sustentabilidade, agroecologia" />
+  <meta name="author" content="Equipe Marc’s Burguer" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- 🌐 Open Graph – Compartilhamento social -->
+  <meta property="og:title" content="Energia Solar Inteligente – Marc’s Burguer" />
+  <meta property="og:description" content="Transforme sol em autonomia regenerativa. Conheça o sistema de combo Picanha Premium do Marc’s Burguer para propriedades rurais e agrovilas." />
+  <meta property="og:image" content="assets/images/combo-xtudo-1.jpg" />
+  <meta property="og:url" content="https://mburguer.com.br/produto-energia.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- 🖼️ Identidade visual e estrutura de app -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#b22222" />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- 🎨 Estilos Modulares do Marc’s Burguer -->
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/produtos.css" />
+  <link rel="stylesheet" href="assets/css/carrossel.css" />
+  <link rel="stylesheet" href="assets/css/responsivo.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+
+</head>
+
+<body>
+  <!-- ⬆️ Cabeçalho institucional -->
+  <div data-include="partials/header-produto.html"></div>
+
+
+  <!-- ⚡ Conteúdo principal -->
+  <main class="conteudo-produto" role="main" aria-labelledby="titulo-energia">
+    <section>
+      <h2 id="titulo-energia" class="titulo-produto">Energia Solar Inteligente</h2>
+      <p>
+        Autonomia energética conectada à inteligência digital regenerativa.
+      </p>
+    </section>
+
+    <!-- 🎠 Carrossel de imagens com integração total -->
+    <section aria-labelledby="galeria-energia">
+      <h3 id="galeria-energia" class="secao-titulo">Galeria do Sistema</h3>
+      <div class="carrossel-container" aria-label="Galeria de imagens do sistema de energia solar Marc’s Burguer" onclick="abrirCarrosselFullscreen(this)">
+        <div class="carrossel transicao" id="carrossel-energia">
+          <img src="assets/images/combo-xtudo-1.jpg" alt="Sistema Marc’s Burguer instalado com painéis solares em campo" />
+          <img src="assets/images/combo-xtudo-2.jpg" alt="Painel digital Marc’s Burguer exibindo dados em tempo real" />
+          <img src="assets/images/combo-xtudo-3.jpg" alt="Operador configurando o sistema com app de monitoramento" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔘 Botão de fechar modo fullscreen -->
+    <button id="fecharFullscreen" onclick="fecharCarrosselFullscreen()" hidden aria-hidden="true">Fechar</button>
+
+    <!-- 🔋 Seção de descrição funcional e aplicada -->
+    <section class="descricao-produto">
+      
+     <p> </p>
+     <p> </p>
+     <p> </p>
+         <h3>Sobre o sistema</h3>
+      <p>
+        O <strong>Sistema de Energia Solar Inteligente Marc’s Burguer</strong> oferece geração fotovoltaica de alta performance, integração com sistemas de controle digital e autonomia energética real. Com painéis otimizados, inversores inteligentes e monitoramento em tempo real, o Marc’s Burguer coloca o poder do sol nas mãos do produtor regenerativo.
+      </p>
+
+      <h3>Benefícios principais</h3>
+      <ul class="lista-tecnica">
+        <li>⚡ <strong>Monitoramento remoto em tempo real</strong> por aplicativo ou dashboard web</li>
+        <li>🌞 <strong>Geração limpa, silenciosa e contínua</strong> com impacto ambiental positivo</li>
+        <li>📊 Visualização gráfica de geração, consumo e eficiência</li>
+        <li>🌤️ Operação otimizada mesmo em dias nublados ou com baixa irradiação</li>
+        <li>🔋 Compatível com <strong>baterias e micro-redes híbridas</strong> para independência total</li>
+      </ul>
+
+      <h3>Aplicações recomendadas</h3>
+      <p>
+        Recomendado para <strong>propriedades rurais, sítios agroecológicos, estufas, agrovilas, galpões, carports e comunidades regenerativas</strong>. O sistema é modular, expansível e pode operar tanto conectado à rede quanto de forma totalmente isolada.
+      </p>
+
+      <!-- 📲 Botão de orçamento via WhatsApp -->
+      <div class="chamada-final">
+        <h3>Solicite seu orçamento agora mesmo</h3>
+        <p>Atendimento especializado para sua propriedade, comunidade ou iniciativa regenerativa.</p>
+        <a href="https://www.ifood.com.br/delivery/marcs-burguer Tenho interesse no sistema de Energia Solar Inteligente do Marc’s Burguer e gostaria de um orçamento personalizado."
+           target="_blank"
+           rel="noopener noreferrer"
+           class="botao-acao"
+           aria-label="Solicitar orçamento via WhatsApp com a equipe Marc’s Burguer">
+          📲 Solicitar orçamento via WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 🧭 Rodapé Institucional -->
+  <div data-include="footer"></div>
+
+
+  <!-- 🧠 Scripts Essenciais -->
+  <script src="scripts/router-auto.js" defer></script>
+  <script src="scripts/menu-lateral.js" defer></script>
+  <script src="scripts/carrossel.js" defer></script>
+  <script src="scripts/footer-loader.js" defer></script>
+
+</body>
+</html>

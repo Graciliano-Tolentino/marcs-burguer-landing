@@ -1,0 +1,143 @@
+/* ============================================================================
+💧 produtos.css – Páginas de Produto (Irrigação, Hidroponia, Energia)
+🎯 Apresentação Institucional • Benefícios Técnicos • Estética Regenerativa
+============================================================================ */
+
+/* 🧾 Bloco principal do conteúdo do produto */
+.conteudo-produto {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: var(--espaco-xl) var(--espaco-md);
+  color: var(--cor-texto);
+  background-color: var(--cor-clara);
+  line-height: 1.75;
+}
+
+/* 📸 Imagem principal destacada */
+.imagem-destaque {
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: var(--espaco-xl);
+  box-shadow: var(--sombra-media);
+  transition: transform 0.4s ease;
+}
+
+.imagem-destaque:hover {
+  transform: scale(1.01);
+}
+
+/* 📚 Título da seção principal */
+.titulo-produto {
+  font-size: 1.85rem;
+  color: var(--cor-principal);
+  margin-bottom: var(--espaco-md);
+  border-bottom: 3px solid var(--cor-secundaria);
+  padding-bottom: 0.4rem;
+}
+
+/* 📝 Parágrafos explicativos */
+.conteudo-produto p {
+  font-size: 1.1rem;
+  margin-bottom: var(--espaco-md);
+  color: var(--cor-texto);
+}
+
+/* 🔹 Lista técnica com ícones */
+.lista-tecnica {
+  list-style: none;
+  padding-left: 0;
+  margin: var(--espaco-lg) 0;
+}
+
+.lista-tecnica li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--cor-texto);
+}
+
+.lista-tecnica li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  color: var(--cor-secundaria);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* 🧭 Bloco final com chamada para ação */
+.chamada-final {
+  background-color: var(--cor-media);
+  padding: var(--espaco-xl) var(--espaco-md);
+  border-radius: 16px;
+  box-shadow: var(--sombra-leve);
+  text-align: center;
+  margin-top: var(--espaco-xl);
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chamada-final h3 {
+  font-size: 1.5rem;
+  color: var(--cor-principal);
+  margin-bottom: var(--espaco-sm);
+}
+
+.chamada-final p {
+  font-size: 1rem;
+  color: var(--cor-texto);
+  margin-bottom: var(--espaco-md);
+}
+
+/* 🔘 Botão institucional complementar */
+.chamada-final a.botao-acao {
+  display: inline-block;
+  padding: 0.85rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: var(--cor-principal);
+  color: var(--cor-clara);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.chamada-final a.botao-acao:hover {
+  background-color: #025e36;
+  transform: scale(1.05);
+}
+
+/* ============================================================================
+📱 Responsividade Regenerativa
+============================================================================ */
+@media (max-width: 768px) {
+  .conteudo-produto {
+    padding: var(--espaco-lg) var(--espaco-sm);
+  }
+
+  .titulo-produto {
+    font-size: 1.5rem;
+  }
+
+  .imagem-destaque {
+    max-height: 300px;
+  }
+
+  .chamada-final {
+    padding: var(--espaco-lg) var(--espaco-sm);
+  }
+
+  .chamada-final h3 {
+    font-size: 1.3rem;
+  }
+
+  .chamada-final a.botao-acao {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.4rem;
+  }
+}

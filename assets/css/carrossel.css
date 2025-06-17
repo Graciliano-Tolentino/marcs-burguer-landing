@@ -1,18 +1,19 @@
 /* =============================================================================
-🎠 carrossel.css — Galeria Inteligente Marc's Burguer (v5.0 Supreme)
-🍔 Swipe mobile, botões flutuantes desktop, acessibilidade gourmet e fullscreen envolvente
+🎠 carrossel.css – Galeria Inteligente Marc’s Burguer (v12.3)
+📱 Swipe mobile, botões flutuantes desktop, acessibilidade invisível e layout proporcional
 ============================================================================= */
 
 /* 🧱 Container externo do carrossel */
 .carrossel-container {
   display: block;
-  margin-inline: auto;
+  margin-left: auto;
+  margin-right: auto;
   width: fit-content;
   max-width: 100%;
   padding: 0;
 }
 
-/* 🎢 Linha horizontal de imagens */
+/* 🎢 Linha horizontal de imagens com escopo posicional */
 .carrossel {
   position: relative;
   display: flex;
@@ -20,8 +21,6 @@
   scroll-snap-type: x mandatory;
   scroll-snap-align: start;
   width: 100%;
-  overflow-x: auto;
-  padding-bottom: var(--espaco-sm);
 }
 
 /* 🖼️ Imagens do carrossel */
@@ -39,17 +38,44 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* 🧠 Acessibilidade por foco no teclado */
+.carrossel img:focus {
+  outline: 2px solid var(--cor-produto, #ffd700);
+  outline-offset: 4px;
+}
+
+/* 🌟 Hover refinado (desktop) */
 .carrossel img:hover {
   transform: scale(1.025);
   box-shadow: var(--sombra-forte);
 }
 
-.carrossel img:focus {
-  outline: 2px solid var(--cor-secundaria);
-  outline-offset: 4px;
+/* 🎛️ Scrollbar refinada */
+.carrossel-container::-webkit-scrollbar {
+  height: 6px;
+}
+.carrossel-container::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 3px;
+}
+.carrossel-container::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-/* 🔘 Botões de navegação desktop */
+/* ♿ Texto oculto para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ✨ Botões flutuantes no desktop */
 .carrossel-controle {
   position: absolute;
   top: 50%;
@@ -71,47 +97,64 @@
   background-color: #eeeeee;
   transform: translateY(-50%) scale(1.1);
 }
-.carrossel-prev { left: 0; }
-.carrossel-next { right: 0; }
+.carrossel-prev {
+  left: 0;
+}
+.carrossel-next {
+  right: 0;
+}
 
+/* 🚫 Oculta botões no mobile/touch */
 @media (hover: none) and (pointer: coarse) {
-  .carrossel-controle { display: none; }
+  .carrossel-controle {
+    display: none;
+  }
 }
 
-/* ♿ Texto invisível para leitores de tela */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+/* ✨ Transição suave */
+.transicao {
+  transition: all 0.25s ease-in-out;
 }
 
-/* 🎠 Fullscreen refinado e imersivo */
+/* 🎥 Suporte futuro a vídeos */
+.carrossel video {
+  border-radius: 12px;
+  max-height: 480px;
+  object-fit: cover;
+}
+
+/* 🌙 Tema escuro */
+@media (prefers-color-scheme: dark) {
+  .carrossel-container {
+    background-color: #1e1e1e;
+  }
+  .carrossel img {
+    background-color: #2a2a2a;
+  }
+}
+
+/* =============================================================================
+🎠 .carrossel.fullscreen – Modo de Galeria Expandida
+============================================================================= */
 .carrossel.fullscreen {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 9999;
   background-color: rgba(0, 0, 0, 0.92);
+  padding: 2rem;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   overflow-x: auto;
+  overflow-y: hidden;
   gap: 2rem;
   scroll-snap-type: x mandatory;
-  padding: 2rem clamp(1rem, 5vw, 3rem);
-  opacity: 0;
-  pointer-events: none;
   scrollbar-width: none;
   -ms-overflow-style: none;
-}
-.carrossel.fullscreen.ativo {
-  opacity: 1;
-  pointer-events: auto;
 }
 .carrossel.fullscreen::-webkit-scrollbar {
   display: none;
@@ -123,8 +166,10 @@
   object-fit: contain;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
 }
-.carrossel.fullscreen img:hover {
-  transform: scale(1.02);
+@media (hover: hover) {
+  .carrossel.fullscreen img:hover {
+    transform: scale(1.02);
+  }
 }
 
 /* 🔘 Botão de saída do fullscreen */
@@ -133,133 +178,39 @@
   top: 1.2rem;
   right: 1.2rem;
   z-index: 10000;
-  background-color: var(--cor-clara);
-  color: var(--cor-escura);
+  background-color: #ffffff;
+  color: #222222;
   font-size: 1rem;
   font-weight: 600;
   padding: 0.6rem 1rem;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  box-shadow: var(--sombra-media);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 0.25s ease, transform 0.25s ease;
 }
 #fecharFullscreen:hover {
-  background-color: var(--cor-secundaria);
+  background-color: #eeeeee;
   transform: scale(1.05);
 }
-#fecharFullscreen:focus-visible {
-  outline: 2px dashed var(--cor-secundaria);
-  outline-offset: 4px;
+@media (max-width: 768px) {
+  #fecharFullscreen {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.9rem;
+  }
 }
 
-/* 🎞️ Slides ativos e inativos */
+/* 🟢 Visibilidade controlada por classes */
+.carrossel img.inativo {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  position: absolute;
+  z-index: 0;
+}
 .carrossel img.ativo {
   opacity: 1;
   visibility: visible;
   position: relative;
   z-index: 1;
-}
-.carrossel img.inativo {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  pointer-events: none;
-  z-index: 0;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-/* ✨ Transição global */
-.transicao {
-  transition: all 0.25s ease-in-out !important;
-}
-
-/* 🌙 Tema escuro responsivo (opcional) */
-@media (prefers-color-scheme: dark) {
-  .carrossel-container {
-    background-color: #1e1e1e;
-  }
-  .carrossel img {
-    background-color: #2a2a2a;
-  }
-}
-
-/* ============================================================================
-🎥 Suporte adicional a vídeos no carrossel – para mídia visual dinâmica
-============================================================================ */
-.carrossel video {
-  border-radius: 12px;
-  max-height: 480px;
-  object-fit: cover;
-  box-shadow: var(--sombra-media);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.carrossel video:hover {
-  transform: scale(1.02);
-  box-shadow: var(--sombra-forte);
-}
-
-/* ============================================================================
-🖱️ Hover responsivo somente em dispositivos com ponteiro (desktop)
-============================================================================ */
-@media (hover: hover) {
-  .carrossel img:hover {
-    transform: scale(1.025);
-    box-shadow: var(--sombra-forte);
-  }
-
-  .carrossel.fullscreen img:hover {
-    transform: scale(1.02);
-  }
-
-  .carrossel video:hover {
-    transform: scale(1.02);
-  }
-}
-
-/* ============================================================================
-🔘 Botões de navegação lateral – Prev / Next
-🎯 Estilo flutuante gourmet com foco visual e interação acessível
-============================================================================ */
-.carrossel-prev,
-.carrossel-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.95);
-  color: #1c1c1c;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.carrossel-prev:hover,
-.carrossel-next:hover {
-  background-color: #eeeeee;
-  transform: translateY(-50%) scale(1.1);
-}
-
-/* 📍 Posição lateral */
-.carrossel-prev {
-  left: 1rem;
-}
-
-.carrossel-next {
-  right: 1rem;
-}
-
-/* 📵 Oculta botões em dispositivos de toque */
-@media (hover: none) and (pointer: coarse) {
-  .carrossel-prev,
-  .carrossel-next {
-    display: none;
-  }
 }

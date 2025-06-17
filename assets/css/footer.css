@@ -1,57 +1,47 @@
 /* ============================================================================
-🍔 Estilo do Rodapé – footer.html
-🎯 Centralização, responsividade e elegância visual
+🎨 Rodapé com distinção cerimonial e institucional refinada
 ============================================================================ */
 
 .rodape-site {
-  background-color: var(--cor-escura);
-  color: var(--cor-media);
-  padding: var(--espaco-xl) var(--espaco-md);
+  background-color: #b22222;
+  color: #ffffff;
   text-align: center;
-  font-family: 'Inter', sans-serif;
+  padding: var(--espaco-lg) var(--espaco-sm);
+  font-size: 0.95rem;
   line-height: 1.6;
-  border-top: 1px solid var(--cor-borda);
+  border-top: 4px solid var(--cor-destaque);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
 .rodape-site p {
-  margin-bottom: var(--espaco-sm);
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.instituto-destaque {
+  color: #fcbf49;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+.rodape-site .cnpj {
+  color: #fcbf49;
+  font-weight: 600;
+}
+
+/* ✨ Apenas o texto do provérbio com dourado regenerativo */
+.proverbio-destaque {
+  color: #fcbf49;
+  font-style: italic;
+  font-weight: 500;
   font-size: 0.95rem;
 }
 
-.rodape-direitos {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--cor-clara);
-}
-
-.rodape-institucional {
-  margin-top: var(--espaco-sm);
-  color: var(--cor-media);
-  font-size: 0.9rem;
-}
-
-.rodape-institucional strong {
-  color: var(--cor-clara);
-}
-
-.frase-slogan {
+/* 📜 Autoria com estilo leve em branco */
+.proverbio-autoria {
+  color: #fcbf49;
+  font-size: 0.85rem;
+  opacity: 0.85;
   font-style: italic;
-  color: var(--cor-secundaria);
-  margin-top: var(--espaco-sm);
-  font-size: 1.05rem;
-}
-
-/* Responsivo – Rodapé com bom espaçamento em telas menores */
-@media (max-width: 768px) {
-  .rodape-site {
-    padding: var(--espaco-lg) var(--espaco-sm);
-  }
-
-  .rodape-site p {
-    font-size: 0.9rem;
-  }
-
-  .frase-slogan {
-    font-size: 1rem;
-  }
+  margin-top: -0.25rem;
 }

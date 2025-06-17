@@ -1,0 +1,41 @@
+/* ==========================================================================================
+📊 dashboard.css – Layout geral do Painel Administrativo Marc’s Burguer
+🌿 Modular, responsivo e compatível com a identidade institucional
+========================================================================================== */
+
+/* Corpo principal */
+.dashboard-body {
+  background-color: #f4f6f8;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container principal do dashboard */
+.dashboard-container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Título da seção */
+.dashboard-titulo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--cor-principal, #1C3D27);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Responsividade adicional para painéis */
+@media (max-width: 768px) {
+  .dashboard-titulo {
+    font-size: 1.4rem;
+    text-align: left;
+  }
+
+  .dashboard-container {
+    padding: 1rem;
+  }
+}

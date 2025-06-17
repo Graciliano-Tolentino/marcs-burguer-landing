@@ -1,93 +1,94 @@
 // ===========================================================
-// 🍔 Marc’s Burguer | Service Worker PWA v1.0
-// 📦 Gerenciamento de cache, funcionamento offline e desempenho
+// 🌿 Agroverso | Service Worker regenerativo v2025.06
+// 📁 Responsável por: cache, offline e desempenho PWA
 // ===========================================================
 
-const CACHE_VERSION = 'marcs-burguer-v1.0';
-const CACHE_NAME = `marcs-burguer-cache-${CACHE_VERSION}`;
+const CACHE_VERSION = 'v2025.06.01';
+const CACHE_NAME = `agroverso-cache-${CACHE_VERSION}`;
 const OFFLINE_URL = '/offline.html';
 
-// 📦 Arquivos essenciais para pré-cache completo
+// 📦 Lista completa de arquivos estáticos essenciais para pré-cache
 const URLS_TO_CACHE = [
-  '/',                        
-  '/index.html',              
-  '/combo-picanha.html',      
-  '/combo-frango.html',       
-  '/combo-xtudo.html',        
-  '/offline.html',            
-  '/manifest.json',           
+  '/',                       // Página raiz
+  '/index.html',             // Landing principal
+  '/produto-irrigacao.html', // Página de produto
+  '/produto-hidroponia.html',
+  '/produto-energia.html',
+  '/offline.html',           // Página de fallback
+  '/style.css',
+  '/manifest.json',
 
-  // 🎯 Arquivos CSS
-  '/assets/css/base.css',
-  '/assets/css/carrossel.css',
-  '/assets/css/home.css',
-  '/assets/css/layout.css',
-  '/assets/css/produtos.css',
-  '/assets/css/responsivo.css',
-
-  // 🔖 Scripts JS
+  // 🎯 Scripts modulares
   '/scripts/carrossel.js',
-  '/scripts/footer-loader.js',
+  '/scripts/formulario.js',
+  '/scripts/utils.js',
   '/scripts/includes.js',
 
-  // 🔥 Ícones e imagens
-  '/assets/images/logo-192.png',
-  '/assets/images/logo-512.png',
-  '/assets/images/logo-monochrome.svg',
-  '/assets/images/favicon.ico',
+  // 🔖 Logos e ícones
+  '/assets/logo-192.png',
+  '/assets/logo-512.png',
+  '/assets/logo-monochrome.svg',
+  '/assets/favicon.ico',
 
-  // 🍔 Imagens dos combos
-  '/assets/images/combo-picanha.jpg',
-  '/assets/images/combo-picanha-1.jpg',
-  '/assets/images/combo-picanha-2.jpg',
-  '/assets/images/combo-picanha-3.jpg',
-  '/assets/images/combo-frango.jpg',
-  '/assets/images/combo-frango-1.jpg',
-  '/assets/images/combo-frango-2.jpg',
-  '/assets/images/combo-frango-3.jpg',
-  '/assets/images/combo-xtudo.jpg',
-  '/assets/images/combo-xtudo-1.jpg',
-  '/assets/images/combo-xtudo-2.jpg',
-  '/assets/images/combo-xtudo-3.jpg'
+  // 🌊 Imagens de produtos (para funcionamento offline completo)
+  '/assets/irrigacao-1.jpg',
+  '/assets/irrigacao-2.jpg',
+  '/assets/irrigacao-3.jpg',
+  '/assets/hidroponia-1.jpg',
+  '/assets/hidroponia-2.jpg',
+  '/assets/hidroponia-3.jpg',
+  '/assets/energia-1.jpg',
+  '/assets/energia-2.jpg',
+  '/assets/energia-3.jpg'
 ];
 
 // ===========================================================
-// 📦 Instalação – Pré-carrega arquivos essenciais no cache
+// 📦 Instalação – Pré-carrega todos os arquivos essenciais
 // ===========================================================
 self.addEventListener('install', event => {
-  self.skipWaiting();
+  self.skipWaiting(); // ⚡ Ativa o service worker imediatamente
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(URLS_TO_CACHE))
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(URLS_TO_CACHE);
+    })
   );
 });
 
 // ===========================================================
-// 🔄 Ativação – Limpa caches antigos
+// 🔄 Ativação – Limpa caches antigos e assume controle das abas
 // ===========================================================
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
       Promise.all(
         keys.map(key => {
-          if (key !== CACHE_NAME) return caches.delete(key);
+          if (key !== CACHE_NAME) {
+            return caches.delete(key); // 🧹 Remove versões antigas
+          }
         })
       )
     )
   );
-  self.clients.claim();
+  self.clients.claim(); // 🛠️ Assume o controle imediatamente sem recarregar
 });
 
 // ===========================================================
-// 🌐 Intercepta requisições e entrega cache ou offline.html
+// 🌐 Intercepta requisições GET e aplica lógica de resposta
 // ===========================================================
 self.addEventListener('fetch', event => {
-  if (event.request.method !== 'GET') return;
+  if (event.request.method !== 'GET') return; // 🚫 Ignora POST, PUT etc.
 
   event.respondWith(
     fetch(event.request)
-      .then(response => response)
-      .catch(() =>
-        caches.match(event.request).then(cached => cached || caches.match(OFFLINE_URL))
+      .then(response => {
+        // ✅ Futuro: salvar cópia no cache dinamicamente se desejado
+        return response;
+      })
+      .catch(() => 
+        // 🔁 Tenta usar o cache, senão exibe página offline
+        caches.match(event.request).then(cached =>
+          cached || caches.match(OFFLINE_URL)
+        )
       )
   );
 });

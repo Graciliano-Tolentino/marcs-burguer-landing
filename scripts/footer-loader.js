@@ -1,9 +1,10 @@
 // =============================================================================
-// 📥 footer-loader.js – Carregamento dinâmico do rodapé institucional Marc’s Burguer
-// 🍔 Código encapsulado para segurança e robustez
+// 📥 footer-loader.js – Carregamento dinâmico do rodapé institucional Agroverso
+// 🌿 Refinado para clareza, robustez e integração semântica
 // =============================================================================
 
 (() => {
+  // 🧠 Encapsula o código para evitar colisões no escopo global
   document.addEventListener("DOMContentLoaded", () => {
     const placeholder = document.querySelector('[data-include="footer"]');
 
@@ -16,7 +17,7 @@
       })
       .then(html => {
         placeholder.innerHTML = html;
-        console.info("✅ Rodapé Marc’s Burguer carregado com sucesso.");
+        console.info("✅ Rodapé Agroverso carregado com sucesso.");
       })
       .catch(error => {
         console.warn("⚠️ Falha ao carregar rodapé institucional:", error.message);

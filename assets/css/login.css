@@ -1,0 +1,186 @@
+/* ==========================================================================================
+🔐 login.css – Tela de Login Marc’s Burguer
+🌿 Refinada com sabedoria, força e beleza institucional
+========================================================================================== */
+
+/* 🎨 Variáveis Globais */
+:root {
+  --cor-principal: #1C3D27;
+  --cor-clara: #ffffff;
+  --cor-media: #eaf3ed;
+  --cor-texto: #222222;
+  --cor-borda: #cccccc;
+  --cor-erro: #b20000;
+  --cor-alerta: #ffcc00;
+
+  --espaco-xs: 0.25rem;
+  --espaco-sm: 0.5rem;
+  --espaco-md: 1rem;
+  --espaco-lg: 1.5rem;
+  --espaco-xl: 2rem;
+
+  --sombra-media: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 🧍 Corpo da Tela */
+.login-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, var(--cor-media), var(--cor-clara));
+  font-family: 'Segoe UI', sans-serif;
+  padding-top: var(--espaco-xl);
+}
+
+/* 📦 Container Central */
+.login-container {
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--cor-clara);
+  padding: var(--espaco-xl) var(--espaco-md);
+  border-radius: 16px;
+  box-shadow: var(--sombra-media);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-md);
+}
+
+/* 📋 Título */
+.login-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--cor-principal);
+  text-align: center;
+}
+
+/* 🧠 Informações */
+.login-info {
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+  margin-bottom: var(--espaco-sm);
+  line-height: 1.5;
+}
+
+/* 🧾 Formulário */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-sm);
+  margin: 0;
+  padding: 0;
+}
+
+.login-form label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--cor-texto);
+}
+
+.login-form input,
+.login-form select,
+.login-form button {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  line-height: 1.2;
+}
+
+.login-form input,
+.login-form select {
+  border: 1px solid var(--cor-borda);
+  background-color: var(--cor-clara);
+  color: var(--cor-texto);
+  transition: border-color 0.2s ease;
+}
+
+.login-form input:focus,
+.login-form select:focus {
+  outline: none;
+  border-color: var(--cor-principal);
+}
+
+/* 🔘 Botão de Entrar */
+.login-form button {
+  background-color: var(--cor-principal);
+  color: var(--cor-clara);
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-form button:hover {
+  background-color: #025e36;
+  transform: scale(1.02);
+}
+
+/* ⚠️ Mensagem de Erro */
+.login-error {
+  color: var(--cor-erro);
+  background-color: #fde8e8;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid var(--cor-alerta);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.login-error[hidden] {
+  display: none !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsividade */
+@media (max-width: 480px) {
+  .login-container {
+    padding: var(--espaco-lg) var(--espaco-sm);
+  }
+
+  .login-title {
+    font-size: 1.3rem;
+  }
+
+  .login-form input,
+  .login-form select,
+  .login-form button {
+    font-size: 0.95rem;
+  }
+}
+
+.voltar-home {
+  margin-top: var(--espaco-md);
+  text-align: center;
+}
+
+.btn-voltar {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  color: var(--cor-principal);
+  border: 2px solid var(--cor-principal);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-voltar:hover {
+  background-color: var(--cor-principal);
+  color: var(--cor-clara);
+}

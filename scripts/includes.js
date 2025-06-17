@@ -1,6 +1,6 @@
 // ==========================================================================================
-// 🔄 includes.js – Inclusão dinâmica de componentes HTML parciais (Marc’s Burguer)
-// 🍔 Código modular e robusto com sincronização inteligente
+// 🔄 includes.js – Inclusão dinâmica de componentes HTML parciais (Agroverso)
+// 🌱 Versão refinada com sincronização inteligente e execução modular pós-carregamento
 // ==========================================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       console.info(`[includes.js] ✅ Include carregado: ${caminho}`);
 
-      // 🎯 Executa funções específicas se necessário futuramente
+      // 🎯 Executa initMenuLateral() se o include for do menu
       if (caminho.includes("menu.html") && typeof window.initMenuLateral === "function") {
         window.initMenuLateral();
         console.info("[includes.js] ☰ initMenuLateral() executado após incluir menu.");
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 🔁 Executa ações globais ao final de todos os includes
+  // 🔁 Executa ações globais ao final de todos os includes (se necessário futuramente)
   Promise.all(includesPromises).then(() => {
     console.info("[includes.js] ✅ Todos os includes foram processados.");
   });

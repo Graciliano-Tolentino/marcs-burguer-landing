@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- =========================================================================================
+  📊 dashboard-gerente.html – Painel do Gerente • Marc’s Burguer
+  🌱 Estratégia, coordenação e acompanhamento com segurança regenerativa
+  ========================================================================================== -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Painel do Gerente • Marc’s Burguer</title>
+  <meta name="description" content="Painel exclusivo para gerentes do Marc’s Burguer. Acompanhe equipes, indicadores e fluxos operacionais." />
+  <meta name="author" content="Equipe Marc’s Burguer" />
+  <meta name="theme-color" content="#1C3D27" />
+
+  <!-- 🎨 Estilos principais -->
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link rel="stylesheet" href="assets/css/kanban.css" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+</head>
+
+<body class="dashboard-body" data-perfil="gerente">
+  <!-- ✅ Cabeçalho institucional -->
+  <div data-include="partials/header-dashboard.html"></div>
+
+  <!-- 🧩 Conteúdo principal -->
+  <main class="dashboard-container" role="main" aria-label="Painel do Gerente Marc’s Burguer">
+    <section class="dashboard-box" aria-labelledby="painel-titulo">
+      <h2 id="painel-titulo" class="dashboard-titulo">Painel Estratégico – Gerência Operacional</h2>
+
+      <!-- ✅ Painel Kanban -->
+      <section class="kanban-board" aria-label="Painel de Tarefas do Gerente">
+        <div class="kanban-column" data-status="a-fazer">
+          <h3>A Fazer</h3>
+          <div class="kanban-items" id="a-fazer"></div>
+        </div>
+        <div class="kanban-column" data-status="em-execucao">
+          <h3>Em Execução</h3>
+          <div class="kanban-items" id="em-execucao"></div>
+        </div>
+        <div class="kanban-column" data-status="concluidas">
+          <h3>Concluídas</h3>
+          <div class="kanban-items" id="concluidas"></div>
+        </div>
+        <div class="kanban-column" data-status="pendencias">
+          <h3>Pendências</h3>
+          <div class="kanban-items" id="pendencias"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- ✅ Rodapé institucional -->
+  <div data-include="partials/footer.html"></div>
+
+  <!-- 🔁 Scripts institucionais -->
+  <script src="scripts/includes.js" defer></script>
+  <script src="scripts/auth.js" defer></script>
+  <script src="scripts/logout.js" defer></script>
+  <script src="scripts/kanban-config.js" defer></script>
+  <script src="scripts/kanban-gerente.js" defer></script>
+</body>
+</html>

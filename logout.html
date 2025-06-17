@@ -1,0 +1,109 @@
+<!-- ========================================================================================
+🌿 logout.html – Confirmação de Saída • Marc’s Burguer
+🔐 Página institucional pós-logout com clareza emocional e retorno acessível à página inicial
+💡 Refinado com sabedoria, força e beleza. Imagem de fundo aplicada com perfeição regenerativa.
+======================================================================================== -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Sessão Encerrada • Marc’s Burguer</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Sessão finalizada com sucesso no sistema Marc’s Burguer. Retorne à página inicial com sabedoria, força e beleza." />
+
+  <!-- 🎨 Folhas de estilo externas -->
+  <link rel="stylesheet" href="assets/css/estilos.css" />
+  <link rel="stylesheet" href="assets/css/login.css" />
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+
+  <!-- 🎨 Estilo específico com plano de fundo e refinamento -->
+  <style>
+    body.login-body {
+      background-image: url('assets/images/background-logout.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    main.logout-confirmacao {
+      min-height: 100vh;
+      background-color: rgba(255, 255, 255, 0.8); /* Transparência leve para legibilidade */
+      text-align: center;
+      padding: 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logout-mensagem {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #1C3D27;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+    }
+
+    .logout-subtexto {
+      font-size: 1.15rem;
+      margin-bottom: 2.5rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .icone-voltar {
+      width: 36px;
+      height: 36px;
+      margin-right: 0.6rem;
+      vertical-align: middle;
+    }
+
+    .btn-voltar {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.5rem;
+      background-color: transparent;
+      border: 2px solid #1C3D27;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #1C3D27;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-voltar:hover {
+      background-color: #1C3D27;
+      color: white;
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+
+<body class="login-body">
+  <main class="logout-confirmacao" role="main" aria-label="Sessão encerrada com sucesso">
+    <h1 class="logout-mensagem">🌿 Sessão encerrada com sucesso</h1>
+
+    <p class="logout-subtexto">
+      Obrigado por utilizar o sistema Marc’s Burguer.<br />
+      Continue cultivando tecnologia com <strong>sabedoria</strong>, <strong>força</strong> e <strong>beleza</strong>.
+    </p>
+
+    <!-- 🔙 Botão de retorno -->
+    <a href="index.html" class="btn-voltar" aria-label="Voltar para a Página Inicial">
+      <img src="assets/images/logo-512.png" alt="Voltar" class="icone-voltar" />
+      Voltar para a Página Inicial
+    </a>
+  </main>
+
+  </body>
+</html>

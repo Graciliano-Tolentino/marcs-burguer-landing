@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- ======================================================================================
+  🔐 login.html – Tela de Acesso Seguro • Marc’s Burguer
+  🌱 Refatorado com clareza, acessibilidade, modularidade e segurança regenerativa
+  ======================================================================================= -->
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1C3D27" />
+  <meta name="author" content="Equipe Marc’s Burguer" />
+  <meta name="description" content="Acesse o painel Marc’s Burguer com segurança regenerativa, controle preciso e integração por perfil técnico." />
+
+  <title>Login Seguro • Marc’s Burguer</title>
+
+  <!-- 🎨 Estilos visuais -->
+  <link rel="stylesheet" href="assets/css/estilos.css" />
+  <link rel="stylesheet" href="assets/css/login.css" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+</head>
+
+<body class="login-body">
+
+  <!-- 🧩 Área principal de autenticação -->
+  <main class="login-container" role="main" aria-label="Área de acesso ao sistema">
+    <section class="login-box" role="form" aria-labelledby="login-titulo">
+
+      <h2 id="login-titulo" class="login-title">Acesso Seguro ao Sistema Marc’s Burguer</h2>
+
+      <form id="form-login" class="login-form" method="POST" novalidate aria-describedby="login-info">
+        <p id="login-info" class="login-info">
+          Use seu e-mail institucional, senha pessoal e selecione o perfil de acesso.<br>
+          
+        </p>
+
+        <label for="email">E-mail institucional:</label>
+        <input type="email" id="email" name="email" class="input-base"
+               placeholder="seunome@mburguer.com.br" autocomplete="username" required />
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" class="input-base"
+               placeholder="••••••••" minlength="6" autocomplete="current-password" required />
+
+        <label for="perfil">Perfil de Acesso:</label>
+        <select id="perfil" name="perfil" class="input-base" required>
+          <option value="">Selecione seu perfil</option>
+          <option value="administrador">Administrador Geral</option>
+          <option value="gerente">Gerente</option>
+          <option value="lider">Líder de Equipe</option>
+          <option value="tecnico">Técnico de Campo</option>
+        </select>
+
+        <button type="submit" class="btn-primary" aria-label="Entrar no sistema Marc’s Burguer">
+          Entrar
+        </button>
+
+        <p class="login-error" id="erro-login" role="alert" hidden>
+          E-mail, senha ou perfil inválidos. Verifique os dados e tente novamente.
+        </p>
+      </form>
+
+      <!-- 🔙 Retorno visual à página inicial -->
+      <div class="voltar-home">
+        <a href="index.html" class="btn-voltar" aria-label="Voltar para a Página Inicial">
+          <img src="assets/images/v-pg-ini.png" alt="Voltar para a Página Inicial" class="icone-voltar" />
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 🔁 Scripts essenciais (sem proteção JWT aqui) -->
+  <script src="scripts/includes.js" defer></script>
+  <script src="scripts/login.js" defer></script>
+  <script src="scripts/logout.js" defer></script>
+
+</body>
+</html>

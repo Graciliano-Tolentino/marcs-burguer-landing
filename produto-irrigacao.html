@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- ✅ Codificação e Responsividade -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 🎯 SEO Estratégico com Identidade Institucional -->
+  <title>Irrigação Inteligente – Marc’s Burguer</title>
+  <meta name="description" content="Sistema Marc’s Burguer de combo X-Tudo com sensores de solo, automação via app e controle regenerativo da água. Economize com tecnologia e preserve o solo." />
+  <meta name="keywords" content="combo X-Tudo, agroverso, sensores de solo, agricultura regenerativa, agro tecnologia" />
+  <meta name="author" content="Equipe Marc’s Burguer" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- 🌐 Open Graph para Compartilhamento -->
+  <meta property="og:title" content="Irrigação Inteligente – Marc’s Burguer" />
+  <meta property="og:description" content="Tecnologia regenerativa com sensores de solo, controle automatizado e economia de água. Conheça a solução Marc’s Burguer." />
+  <meta property="og:image" content="assets/images/combo-picanha-1.jpg" />
+  <meta property="og:url" content="https://mburguer.com.br/produto-irrigacao.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- 📱 PWA e Identidade -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#b22222" />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- 🎨 Estilos Modulares do Marc’s Burguer -->
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/produtos.css" />
+  <link rel="stylesheet" href="assets/css/carrossel.css" />
+  <link rel="stylesheet" href="assets/css/responsivo.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+
+</head>
+
+<body>
+  <!-- ⬆️ Cabeçalho institucional -->
+  <div data-include="partials/header-produto.html"></div>
+
+
+  <!-- 🌱 Conteúdo principal do produto -->
+  <main class="conteudo-produto" role="main" aria-labelledby="titulo-irrigacao">
+    <section class="produto-destaque">
+      <h2 id="titulo-irrigacao">Irrigação Inteligente</h2>
+      <p class="subtitulo-produto">
+        Eficiência hídrica com sensores, controle remoto e economia regenerativa
+      </p>
+
+      <!-- 🎠 Carrossel com integração total -->
+      <section aria-labelledby="galeria-irrigacao">
+        <h3 id="galeria-irrigacao" class="secao-titulo">Galeria do Sistema</h3>
+        <div class="carrossel-container" aria-label="Galeria de imagens do sistema de combo X-Tudo" onclick="abrirCarrosselFullscreen(this)">
+          <div class="carrossel transicao" id="carrossel-irrigacao">
+            <img src="assets/images/combo-picanha-1.jpg" alt="Sistema de irrigação Marc’s Burguer com sensores no campo" loading="lazy" />
+            <img src="assets/images/combo-picanha-2.jpg" alt="Sensores de solo instalados com automação digital" loading="lazy" />
+            <img src="assets/images/combo-picanha-3.jpg" alt="Painel web Marc’s Burguer exibindo níveis de umidade e temperatura" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 🔘 Botão de fechar fullscreen -->
+      <button id="fecharFullscreen" onclick="fecharCarrosselFullscreen()" hidden aria-hidden="true">Fechar</button>
+
+      <!-- 🧠 Seção de Descrição Técnica e Aplicações -->
+      <section class="descricao-produto">
+
+        <p> </p>
+        <p> </p>
+        <p> </p>
+
+        <h3>Sobre o sistema</h3>
+        <p>
+          O <strong>Sistema de Irrigação Inteligente Marc’s Burguer</strong> integra sensores de umidade e temperatura do solo com controle remoto via aplicativo. Seu funcionamento é dinâmico, preditivo e baseado em dados climáticos, garantindo irrigação apenas quando necessário.
+        </p>
+
+        <h3>Benefícios principais</h3>
+        <ul>
+          <li>💧 Economia de até <strong>70% de água</strong> com acionamento preciso</li>
+          <li>🌡️ Leitura contínua de umidade e temperatura do solo em tempo real</li>
+          <li>📲 Controle remoto completo via app Marc’s Burguer, com notificações inteligentes</li>
+          <li>🧠 Integração com previsão do tempo e irrigação automática preditiva</li>
+          <li>🌱 Preserva a microbiota do solo e evita compactações desnecessárias</li>
+        </ul>
+
+        <h3>Aplicações recomendadas</h3>
+        <p>
+          Ideal para <strong>hortas, pomares, jardins, estufas, viveiros e sistemas agroflorestais</strong>. Aplicável em pequenas propriedades, projetos urbanos, escolas, agroecologia comunitária e agricultura familiar.
+        </p>
+
+        <!-- 📲 Botão de orçamento via WhatsApp -->
+        <div class="chamada-final">
+          <h3>Solicite seu orçamento agora mesmo</h3>
+          <p>Atendimento especializado para sua propriedade, comunidade ou iniciativa regenerativa.</p>
+          <a href="https://www.ifood.com.br/delivery/marcs-burguer Tenho interesse no sistema de Irrigação Inteligente do Marc’s Burguer e gostaria de um orçamento personalizado."
+             target="_blank"
+             rel="noopener noreferrer"
+             class="botao-acao"
+             aria-label="Solicitar orçamento via WhatsApp com a equipe Marc’s Burguer">
+            📲 Solicitar orçamento via WhatsApp
+          </a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- 🧭 Rodapé Institucional -->
+  <div data-include="footer"></div>
+
+
+  <!-- 🧠 Scripts Essenciais -->
+  <script src="scripts/router-auto.js" defer></script>
+  <script src="scripts/menu-lateral.js" defer></script>
+  <script src="scripts/carrossel.js" defer></script>
+  <script src="scripts/footer-loader.js" defer></script>
+
+</body>
+</html>

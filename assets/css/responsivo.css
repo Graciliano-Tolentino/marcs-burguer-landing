@@ -1,11 +1,12 @@
 /* ============================================================================
-📱 responsivo.css – Responsividade Global Marc’s Burguer
-🍔 Ajustes otimizados para mobile, tablet e desktop
+📱 responsivo.css – Responsividade Global Padrão Marc’s Burguer
+🎯 Ajustes finos para mobile, tablet, desktop grande
 ============================================================================ */
 
 /* ============================================================================
-📱 Smartphones (até 480px)
+📱 Telas pequenas: smartphones (até 480px)
 ============================================================================ */
+
 @media (max-width: 480px) {
   body {
     font-size: 0.95rem;
@@ -15,7 +16,8 @@
     font-size: 1.3rem;
   }
 
-  .container {
+  .container,
+  .section-container {
     padding: var(--espaco-md) var(--espaco-sm);
   }
 
@@ -28,57 +30,64 @@
     max-height: 240px;
   }
 
-  .botao-acao {
-    width: 100%;
-    font-size: 0.95rem;
-    padding: 0.75rem 1.2rem;
+  .formulario-orcamento,
+  .login-form {
+    padding: 0;
+    gap: var(--espaco-sm);
   }
 
-  .conteudo-produto,
-  .chamada-final {
-    padding: var(--espaco-md) var(--espaco-sm);
+  .btn-primary,
+  .whatsapp-btn,
+  .formulario-orcamento button {
+    width: 100%;
+    font-size: 0.95rem;
   }
 }
 
 /* ============================================================================
-📲 Tablets (481px até 1024px)
+📲 Telas médias: tablets (481px até 1024px)
 ============================================================================ */
+
 @media (min-width: 481px) and (max-width: 1024px) {
-  .cards-container {
+  .cards-container,
+  .dashboard-cards {
     flex-direction: column;
     align-items: center;
   }
 
-  .card {
+  .dashboard-card {
     width: 90%;
+  }
+
+  .login-container {
+    padding: var(--espaco-lg) var(--espaco-md);
   }
 
   .carrossel img {
     max-height: 360px;
   }
 
-  .conteudo-produto {
-    padding: var(--espaco-lg) var(--espaco-md);
-  }
-
   .chamada-final {
-    padding: var(--espaco-lg) var(--espaco-md);
+    padding: var(--espaco-lg) var(--espaco-sm);
   }
 
-  .container {
-    padding: var(--espaco-lg) var(--espaco-md);
+  .container,
+  .section-container {
+    padding: var(--espaco-lg) var(--espaco-sm);
   }
 }
 
 /* ============================================================================
-🖥️ Desktops (> 1280px)
+🖥️ Telas grandes: desktops > 1280px
 ============================================================================ */
+
 @media (min-width: 1280px) {
   body {
     font-size: 1.05rem;
   }
 
-  .container {
+  .container,
+  .section-container {
     padding: var(--espaco-xl);
   }
 
@@ -90,10 +99,5 @@
 
   .carrossel img {
     max-height: 520px;
-  }
-
-  .botao-acao {
-    font-size: 1.1rem;
-    padding: 1rem 2rem;
   }
 }

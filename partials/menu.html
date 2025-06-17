@@ -1,0 +1,30 @@
+<!-- 🌿 Ícone de Login com Acessibilidade -->
+<a href="login.html"
+   class="menu-login-icon"
+   aria-label="Ir para a tela de login">
+  <img src="assets/images/logo-login.png"
+       alt="Login Marc’s Burguer"
+       class="menu-login-img"
+       decoding="async"
+       loading="eager" />
+</a>
+
+<!-- 📋 Menu Lateral com Links Públicos e Privados -->
+<nav id="menuLateral"
+     class="menu-lateral"
+     tabindex="-1"
+     aria-label="Menu lateral do Marc’s Burguer"
+     aria-hidden="true">
+
+  <!-- 🔓 Navegação pública -->
+  <a href="index.html">🏠 Início</a>
+  <a href="login.html">🔐 Login</a>
+
+  <!-- 🔐 Navegação condicional pós-login (liberado via auth.js) -->
+  <div id="menuPrivado" hidden>
+    <a href="dashboard-admin.html">👑 Painel Admin</a>
+    <a href="dashboard-gerente.html">📈 Painel Gerente</a>
+    <a href="dashboard-lider.html">🧭 Painel Líder</a>
+    <a href="dashboard-tecnico.html">🔧 Painel Técnico</a>
+  </div>
+</nav>

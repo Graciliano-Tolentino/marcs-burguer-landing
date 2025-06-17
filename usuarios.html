@@ -1,0 +1,123 @@
+<!-- =====================================================================================
+🧑‍💼 usuarios.html – Página Protegida: Visualização de Usuários • Marc’s Burguer
+🔐 Acesso restrito aos perfis: Administrador Geral e Gerente
+🎯 Refinado com sabedoria, força e beleza
+===================================================================================== -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- 🌐 Metadados Essenciais -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- 📑 SEO e Identidade -->
+  <title>Usuários Vinculados • Marc’s Burguer</title>
+  <meta name="description" content="Página protegida de gerenciamento dos usuários vinculados ao sistema Marc’s Burguer. Acesso exclusivo para Administradores e Gerentes." />
+  <meta name="author" content="Equipe Marc’s Burguer" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- 🎨 Estilo Institucional -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+
+  <!-- 🔐 Segurança de acesso -->
+  <script src="scripts/auth.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      protegerPagina(["administrador", "gerente"]);
+    });
+  </script>
+</head>
+
+<body class="pagina-protegida">
+  <!-- ⬆️ Cabeçalho institucional fixo -->
+  <header class="header-principal">
+    <nav class="navegacao-principal">
+      <ul class="nav-menu">
+        <li><a href="index.html">🏠 Início</a></li>
+        <li><a href="dashboard.html">📊 Painel</a></li>
+        <li><a href="usuarios.html" class="ativo">👥 Usuários</a></li>
+        <li><button class="btn-secundario" onclick="logout()">🚪 Sair</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 🎯 Conteúdo protegido -->
+  <main class="conteudo-principal" role="main" aria-label="Painel de usuários">
+    <section class="bloco-destaque">
+      <h1 class="titulo-secao">Usuários Vinculados ao Sistema</h1>
+      <p class="texto-suporte">
+        Abaixo estão listados os usuários vinculados à plataforma Marc’s Burguer. A exibição completa depende do seu nível de permissão.
+      </p>
+
+      <div class="tabela-container">
+        <!-- 🧾 Tabela simulada -->
+        <table class="tabela-usuarios" aria-label="Lista de usuários vinculados">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Perfil</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ana Souza</td>
+              <td>ana@mburguer.com.br</td>
+              <td>Gerente</td>
+              <td>✅ Ativo</td>
+            </tr>
+            <tr>
+              <td>João Lima</td>
+              <td>joao@mburguer.com.br</td>
+              <td>Técnico</td>
+              <td>⏳ Pendente</td>
+            </tr>
+            <tr>
+              <td>Marina Dias</td>
+              <td>marina@mburguer.com.br</td>
+              <td>Administrador</td>
+              <td>✅ Ativo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- 📢 Mensagem de acessibilidade em caso de erro -->
+  <section id="mensagem-acesso" class="mensagem-acesso" role="alert" aria-live="assertive" hidden>
+    <p>Você não tem permissão para acessar esta página. Redirecionando para login...</p>
+  </section>
+
+  <!-- 🔒 Inclusão de script adicional para foco e acessibilidade -->
+  <script>
+    // 🔁 Feedback automático para leitores de tela
+    if (!sessionStorage.getItem("usuario_perfil")) {
+      const alerta = document.getElementById("mensagem-acesso");
+      if (alerta) {
+        alerta.hidden = false;
+        alerta.focus?.();
+      }
+    }
+
+    // 🎯 Foco inicial no título principal ao carregar
+    window.onload = () => {
+      document.querySelector("h1")?.focus?.();
+    };
+  </script>
+
+  <!-- ⬇️ Rodapé institucional -->
+  <footer class="rodape-institucional" role="contentinfo">
+    <section class="rodape-bloco">
+      <p><strong>Marc’s Burguer</strong> – Tecnologia para a regeneração da terra e do saber.</p>
+      <p>© 2025 Equipe Marc’s Burguer – Todos os direitos reservados.</p>
+      <p class="contato-suporte">
+        Suporte técnico: <a href="mailto:suporte@mburguer.com.br">suporte@mburguer.com.br</a> · WhatsApp: <a href="https://www.ifood.com.br/delivery/marcs-burguer" target="_blank" rel="noopener noreferrer">+55 11 9 6337-2373</a>
+      </p>
+    </section>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- 🛡️ Metadados Técnicos e Institucionais -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>403 – Acesso Negado • Marc’s Burguer</title>
+  <meta name="description" content="Você não possui autorização para acessar esta área do sistema Marc’s Burguer. Faça login com credenciais válidas." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="author" content="Equipe Marc’s Burguer" />
+
+  <!-- 🎨 Estilo Unificado -->
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="icon" href="assets/favicon.ico" />
+</head>
+
+<body class="dashboard-body">
+
+  <main class="dashboard-container" role="main" aria-label="Mensagem de acesso negado">
+    <section class="dashboard-box">
+      <h1 class="dashboard-title">🚫 Acesso Negado</h1>
+
+      <p class="dashboard-subtitle">
+        Você tentou acessar uma área restrita do sistema Marc’s Burguer sem autenticação válida.
+      </p>
+
+      <div class="dashboard-message" role="alert" aria-live="assertive">
+        <h2>Erro 403 – Proibido</h2>
+        <p>Este conteúdo exige um perfil de usuário autenticado.</p>
+        <p>Faça login com suas credenciais para acessar as funcionalidades disponíveis ao seu perfil.</p>
+      </div>
+
+      <div class="dashboard-footer">
+        <button class="btn-secondary" onclick="voltarLogin()" aria-label="Voltar para a página de login">🔐 Ir para Login</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function voltarLogin() {
+      sessionStorage.clear();
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>

@@ -4,19 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="theme-color" content="#1E1E1E" />
+  <meta name="theme-color" content="#b22222" />
 
-  <title>🍔 Offline • Marc’s Burguer</title>
-  <meta name="description" content="Você está offline. Assim que sua conexão voltar, o sabor irresistível do Marc’s Burguer estará novamente disponível." />
+  <title>🌿 Offline • Marc’s Burguer</title>
+  <meta name="description" content="Você está offline. Assim que sua conexão retornar, o Marc’s Burguer estará novamente disponível com sabedoria, força e beleza." />
 
-  <link rel="icon" href="assets/images/favicon.ico" />
+  <!-- Favicon leve para contingência -->
+  <link rel="icon" href="assets/favicon.ico" />
 
   <style>
     :root {
-      --vermelho: #B22222;
-      --grafite: #1E1E1E;
-      --cinza-claro: #CCCCCC;
-      --branco: #FFFFFF;
+      --verde: #b22222;
+      --bege: #f6f9f2;
+      --cinza: #666;
+      --cinza-claro: #bbb;
     }
 
     * {
@@ -26,8 +27,8 @@
     html, body {
       margin: 0;
       padding: 0;
-      background-color: var(--grafite);
-      color: var(--branco);
+      background-color: var(--bege);
+      color: var(--verde);
       font-family: 'Segoe UI', Tahoma, sans-serif;
       height: 100%;
     }
@@ -50,18 +51,17 @@
       width: 96px;
       height: auto;
       margin-bottom: 1.5rem;
-      filter: drop-shadow(0 0 2px var(--vermelho));
+      filter: drop-shadow(0 0 2px var(--verde));
     }
 
     h1 {
       font-size: 2rem;
       margin-bottom: 0.75rem;
-      color: var(--vermelho);
     }
 
     p {
       font-size: 1.125rem;
-      color: var(--cinza-claro);
+      color: var(--cinza);
     }
 
     footer {
@@ -72,19 +72,19 @@
   </style>
 </head>
 
-<body aria-live="polite" aria-label="Página offline do Marc’s Burguer">
-  <header role="banner">
-    <img src="assets/images/logo.svg" alt="Marc’s Burguer" />
-    <h1>🍔 Você está offline</h1>
+<body aria-live="polite" aria-label="Página de contingência offline do Marc’s Burguer">
+  <header role="banner" aria-label="Cabeçalho simplificado do Marc’s Burguer">
+    <img src="assets/logo-192.png" alt="Logotipo do Marc’s Burguer" />
+    <h1>🌱 Você está offline</h1>
     <p>
-      Parece que você perdeu a conexão.<br />
-      Mas não se preocupe, assim que a internet voltar,<br />
-      nossos combos irresistíveis estarão à sua espera!
+      A conexão com o Marc’s Burguer foi temporariamente interrompida.<br />
+      Assim que o sinal retornar, todo o ecossistema estará disponível novamente.<br />
+      Até lá, preserve sua energia e mantenha-se enraizado.
     </p>
   </header>
 
-  <footer role="contentinfo">
-    Marc’s Burguer – Sabor artesanal que <strong>supera expectativas</strong> em Cotia/SP.
+  <footer role="contentinfo" aria-label="Rodapé institucional do Marc’s Burguer">
+    Marc’s Burguer — Tecnologia regenerativa com <strong>sabedoria</strong>, <strong>força</strong> e <strong>beleza</strong>.
   </footer>
 </body>
 </html>
